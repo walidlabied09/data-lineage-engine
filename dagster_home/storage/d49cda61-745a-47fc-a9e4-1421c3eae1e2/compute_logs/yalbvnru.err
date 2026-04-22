@@ -1,0 +1,60 @@
+2025-11-19 23:34:41 +0000 - dagster - DEBUG - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - 781 - LOGS_CAPTURED - Started capturing logs in process (pid: 781).
+2025-11-19 23:34:41 +0000 - dagster - DEBUG - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - 781 - dbt_run_op - STEP_START - Started execution of step "dbt_run_op".
+2025-11-19 23:34:41 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op - 🚀 Running dbt run + dbt test...
+2025-11-19 23:34:45 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op - [0m23:34:45  Running with dbt=1.10.15
+2025-11-19 23:34:46 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op - [0m23:34:46  Registered adapter: postgres=1.9.1
+2025-11-19 23:34:47 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op - [0m23:34:47  Unable to do partial parsing because of a version mismatch
+2025-11-19 23:34:52 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op - [0m23:34:52  Encountered an error:
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op - [Errno 2] No such file or directory: '/usr/app/dbt_packages/dbt-expectations-0.10.3/dbt_project.yml'
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op - [0m23:34:52  Traceback (most recent call last):
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 178, in wrapper
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     result, success = func(*args, **kwargs)
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 128, in wrapper
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     return func(*args, **kwargs)
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 272, in wrapper
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     return func(*args, **kwargs)
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 303, in wrapper
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     return func(*args, **kwargs)
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 373, in wrapper
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     return func(*args, **kwargs)
+2025-11-19 23:34:53 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 350, in wrapper
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     return func(*args, **kwargs)
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 389, in wrapper
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     setup_manifest(ctx, write=write, write_perf_info=write_perf_info)
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 416, in setup_manifest
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     ctx.obj["manifest"] = parse_manifest(
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/parser/manifest.py", line 2123, in parse_manifest
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     manifest = ManifestLoader.get_full_manifest(
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/parser/manifest.py", line 320, in get_full_manifest
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     manifest = loader.load()
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/parser/manifest.py", line 425, in load
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     self.parse_project(
+2025-11-19 23:34:54 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/parser/manifest.py", line 769, in parse_project
+2025-11-19 23:34:55 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     file = load_source_file(path, ParseFileType.Hook, project.project_name, {})
+2025-11-19 23:34:55 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt/parser/read_files.py", line 84, in load_source_file
+2025-11-19 23:34:55 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     file_contents = load_file_contents(path.absolute_path, strip=True)
+2025-11-19 23:34:55 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt_common/record.py", line 538, in record_replay_wrapper
+2025-11-19 23:34:55 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     return func_to_record(*call_args, **kwargs)
+2025-11-19 23:34:55 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -   File "/usr/local/lib/python3.10/site-packages/dbt_common/clients/system.py", line 182, in load_file_contents
+2025-11-19 23:34:55 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op -     with open(path, "rb") as handle:
+2025-11-19 23:34:55 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op - FileNotFoundError: [Errno 2] No such file or directory: '/usr/app/dbt_packages/dbt-expectations-0.10.3/dbt_project.yml'
+2025-11-19 23:34:55 +0000 - dagster - INFO - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op
+2025-11-19 23:34:55 +0000 - dagster - ERROR - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - dbt_run_op - dbt exited with code 2
+2025-11-19 23:34:55 +0000 - dagster - ERROR - data_quality_job - d49cda61-745a-47fc-a9e4-1421c3eae1e2 - 781 - dbt_run_op - STEP_FAILURE - Execution of step "dbt_run_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "dbt_run_op"::
+
+Exception: ❌ dbt failed (see logs above and in dbt_dagster.log)
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/ops/dbt_op.py", line 34, in dbt_run_op
+    raise Exception("❌ dbt failed (see logs above and in dbt_dagster.log)")
+

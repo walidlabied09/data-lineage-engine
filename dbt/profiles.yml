@@ -1,0 +1,13 @@
+datalineage360:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres-airbyte     # 👈 le nom Docker exact
+      port: 5432
+      user: airbyte
+      password: airbyte
+      dbname: airbyte
+      schema: analytics
+      threads: 4
+      connect_timeout: 10

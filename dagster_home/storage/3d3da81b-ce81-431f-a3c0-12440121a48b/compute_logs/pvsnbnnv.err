@@ -1,0 +1,58 @@
+2025-11-19 23:54:04 +0000 - dagster - DEBUG - data_quality_job - 3d3da81b-ce81-431f-a3c0-12440121a48b - 946 - LOGS_CAPTURED - Started capturing logs in process (pid: 946).
+2025-11-19 23:54:05 +0000 - dagster - DEBUG - data_quality_job - 3d3da81b-ce81-431f-a3c0-12440121a48b - 946 - dbt_run_op - STEP_START - Started execution of step "dbt_run_op".
+2025-11-19 23:54:05 +0000 - dagster - INFO - data_quality_job - 3d3da81b-ce81-431f-a3c0-12440121a48b - dbt_run_op - 📦 Running: dbt deps (to ensure packages are installed)...
+2025-11-19 23:54:12 +0000 - dagster - INFO - data_quality_job - 3d3da81b-ce81-431f-a3c0-12440121a48b - dbt_run_op - [0m23:54:08  Running with dbt=1.10.15
+[0m23:54:10  [[33mWARNING[0m]: Deprecated functionality
+The `calogica/dbt_expectations` package is deprecated in favor of
+`metaplane/dbt_expectations`. Please update your `packages.yml` configuration to
+use `metaplane/dbt_expectations` instead.
+[0m23:54:11  Encountered an error:
+Found duplicate project "dbt_date". This occurs when a dependency has the same project name as some other dependency.
+[0m23:54:11  Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 303, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/main.py", line 461, in deps
+    results = task.run()
+  File "/usr/local/lib/python3.10/site-packages/dbt/task/deps.py", line 223, in run
+    self.lock()
+  File "/usr/local/lib/python3.10/site-packages/dbt/task/deps.py", line 187, in lock
+    resolved_deps = resolve_packages(packages, self.project, self.cli_vars)
+  File "/usr/local/lib/python3.10/site-packages/dbt/deps/resolver.py", line 136, in resolve_packages
+    _check_for_duplicate_project_names(resolved, project, renderer)
+  File "/usr/local/lib/python3.10/site-packages/dbt/deps/resolver.py", line 110, in _check_for_duplicate_project_names
+    raise DuplicateProjectDependencyError(project_name)
+dbt.exceptions.DuplicateProjectDependencyError: Found duplicate project "dbt_date". This occurs when a dependency has the same project name as some other dependency.
+
+[0m23:54:11  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PackageRedirectDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+
+2025-11-19 23:54:12 +0000 - dagster - ERROR - data_quality_job - 3d3da81b-ce81-431f-a3c0-12440121a48b - dbt_run_op
+2025-11-19 23:54:13 +0000 - dagster - ERROR - data_quality_job - 3d3da81b-ce81-431f-a3c0-12440121a48b - 946 - dbt_run_op - STEP_FAILURE - Execution of step "dbt_run_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "dbt_run_op"::
+
+Exception: ❌ dbt deps failed
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/ops/dbt_op.py", line 25, in dbt_run_op
+    raise Exception("❌ dbt deps failed")
+

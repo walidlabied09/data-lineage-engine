@@ -1,0 +1,27 @@
+[0m13:01:35  Running with dbt=1.9.0
+Serving docs at 8080
+To access from your browser, navigate to: http://localhost:8080
+
+
+
+Press Ctrl+C to exit.
+127.0.0.1 - - [03/Dec/2025 13:01:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [03/Dec/2025 13:01:36] "GET / HTTP/1.1" 200 -
+172.20.0.1 - - [03/Dec/2025 13:02:08] "GET / HTTP/1.1" 200 -
+172.20.0.1 - - [03/Dec/2025 13:02:09] "GET /manifest.json?cb=1764766929380 HTTP/1.1" 200 -
+172.20.0.1 - - [03/Dec/2025 13:02:09] "GET /catalog.json?cb=1764766929380 HTTP/1.1" 200 -
+172.20.0.1 - - [03/Dec/2025 13:02:09] code 404, message File not found
+172.20.0.1 - - [03/Dec/2025 13:02:09] "GET /%7B%7B%20getIcon(item.type,%20'on')%20%7D%7D HTTP/1.1" 404 -
+172.20.0.1 - - [03/Dec/2025 13:02:09] code 404, message File not found
+172.20.0.1 - - [03/Dec/2025 13:02:09] "GET /%7B%7B%20getIcon(item.type,%20'off')%20%7D%7D HTTP/1.1" 404 -
+172.20.0.1 - - [03/Dec/2025 13:02:10] code 404, message File not found
+172.20.0.1 - - [03/Dec/2025 13:02:10] "GET /$%7Brequire('./assets/favicons/favicon.ico')%7D HTTP/1.1" 404 -
+172.20.0.1 - - [03/Dec/2025 13:02:20] "GET / HTTP/1.1" 200 -
+172.20.0.1 - - [03/Dec/2025 13:02:21] "GET /manifest.json?cb=1764766941290 HTTP/1.1" 200 -
+172.20.0.1 - - [03/Dec/2025 13:02:21] "GET /catalog.json?cb=1764766941290 HTTP/1.1" 200 -
+172.20.0.1 - - [03/Dec/2025 13:02:21] code 404, message File not found
+172.20.0.1 - - [03/Dec/2025 13:02:21] "GET /%7B%7B%20getIcon(item.type,%20'on')%20%7D%7D HTTP/1.1" 404 -
+172.20.0.1 - - [03/Dec/2025 13:02:21] code 404, message File not found
+172.20.0.1 - - [03/Dec/2025 13:02:21] "GET /%7B%7B%20getIcon(item.type,%20'off')%20%7D%7D HTTP/1.1" 404 -
+172.20.0.1 - - [03/Dec/2025 13:02:24] code 404, message File not found
+172.20.0.1 - - [03/Dec/2025 13:02:24] "GET /$%7Brequire('./assets/favicons/favicon.ico')%7D HTTP/1.1" 404 -

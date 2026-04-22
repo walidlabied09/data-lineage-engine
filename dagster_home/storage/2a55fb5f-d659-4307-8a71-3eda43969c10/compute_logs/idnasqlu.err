@@ -1,0 +1,328 @@
+2025-11-20 17:27:28 +0000 - dagster - DEBUG - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - 72390 - LOGS_CAPTURED - Started capturing logs in process (pid: 72390).
+2025-11-20 17:27:28 +0000 - dagster - DEBUG - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - 72390 - gx_validation_op - STEP_START - Started execution of step "gx_validation_op".
+2025-11-20 17:27:28 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - ▶️ Running Great Expectations pipeline...
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 🚀 Lancement pipeline Great Expectations
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📁 Type de contexte : <class 'great_expectations.data_context.data_context.ephemeral_data_context.EphemeralDataContext'>
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - ℹ️ Aucun ancien datasource à supprimer
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - ✅ Nouveau datasource créé : pg_airbyte
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 🔷 Validation de analytics.stg_sales_data
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📦 Asset ajouté : analytics.stg_sales_data
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📥 BatchRequest créé
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - ℹ️ Aucune suite existante à supprimer pour stg_sales_data_suite
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📘 Nouvelle suite créée : stg_sales_data_suite
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📊 Aperçu des données (stg) :
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/1 [00:00<?, ?it/s]
+2025-11-20 17:27:31 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/1 [00:00<?, ?it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 1/1 [00:00<00:00, 51.36it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 1/1 [00:00<00:00, 51.07it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 1/1 [00:00<00:00, 50.93it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 1/1 [00:00<00:00, 50.75it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - /usr/local/lib/python3.10/site-packages/great_expectations/expectations/expectation.py:1599: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op -   warnings.warn(
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op -   invoice_no  ...                                sk
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 0     550302  ...  00001482a076eb8893b4d68354c6c58c
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 1     566408  ...  000055653a16796d3a2241b98e8b0403
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 2     578533  ...  0000abbd6bc9594cf8711b677c31a4e5
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 3     543985  ...  0001277d916575dfa4a0ee0a73799dd2
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 4     576538  ...  000142c2700349df2c85bac51ecf07bc
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - [5 rows x 10 columns]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 80.56it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 80.05it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 72.86it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 72.67it/s]
+2025-11-20 17:27:32 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 90.30it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 90.13it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 58.64it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 58.64it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 58.64it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 58.64it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 58.64it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 58.64it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 53.32it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 4019.46it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 3235.10it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 145.57it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 144.78it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 179.15it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 178.64it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 90.61it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 90.46it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 74.50it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 74.50it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 74.50it/s]
+2025-11-20 17:27:33 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 74.50it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 74.26it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/2 [00:00<?, ?it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/2 [00:00<?, ?it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 1/2 [00:00<00:00, 5370.43it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 1/2 [00:00<00:00, 3819.95it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 2/2 [00:00<00:00, 76.05it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 2/2 [00:00<00:00, 75.72it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 2/2 [00:00<00:00, 75.53it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 2/2 [00:00<00:00, 75.29it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 5694.91it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 4382.76it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 195.68it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 193.73it/s]
+2025-11-20 17:27:34 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 279.78it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 278.04it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 75.57it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 75.57it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 75.57it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 75.57it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 75.57it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 75.57it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 60.34it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 4163.08it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 3181.12it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 137.09it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 136.29it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 200.49it/s]
+2025-11-20 17:27:35 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 199.79it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 63.76it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 63.76it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 63.76it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 63.76it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 63.76it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 63.76it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 57.31it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - ✅ Expectations (stg_sales_data) définies, lancement de la validation...
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/28 [00:00<?, ?it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/28 [00:00<?, ?it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  11%|█         | 3/28 [00:00<00:00, 7190.24it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  11%|█         | 3/28 [00:00<00:00, 5047.30it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  21%|██▏       | 6/28 [00:00<00:00, 132.87it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  21%|██▏       | 6/28 [00:00<00:00, 132.08it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  43%|████▎     | 12/28 [00:00<00:00, 257.38it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  43%|████▎     | 12/28 [00:00<00:00, 255.93it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  79%|███████▊  | 22/28 [00:00<00:00, 67.55it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  79%|███████▊  | 22/28 [00:00<00:00, 67.55it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  79%|███████▊  | 22/28 [00:00<00:00, 67.55it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 28/28 [00:00<00:00, 67.55it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 28/28 [00:00<00:00, 67.55it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 28/28 [00:00<00:00, 67.55it/s]
+2025-11-20 17:27:36 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 28/28 [00:00<00:00, 68.23it/s]
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 🏁 Résultat stg_sales_data : success = True
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📄 Rapport Data Docs (stg_sales_data) : /usr/src/app/gx/validation_docs/stg_sales_data_validation.html
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 🟣 Validation de analytics.fct_sales
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📦 Asset ajouté : analytics.fct_sales
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📥 BatchRequest créé
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - ℹ️ Aucune suite existante à supprimer pour fct_sales_suite
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📘 Nouvelle suite créée : fct_sales_suite
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📊 Aperçu des données (fct_sales) :
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/1 [00:00<?, ?it/s]
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/1 [00:00<?, ?it/s]
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 1/1 [00:00<00:00, 58.88it/s]
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 1/1 [00:00<00:00, 58.51it/s]
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 1/1 [00:00<00:00, 58.33it/s]
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 1/1 [00:00<00:00, 58.10it/s]
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - /usr/local/lib/python3.10/site-packages/great_expectations/expectations/expectation.py:1599: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op -   warnings.warn(
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op -   invoice_number product_code  ...  gross_margin line_total
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 0         572458        21080  ...          3.06      10.20
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 1         558233        84755  ...          3.12      10.40
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 2         540551        21993  ...          4.52      15.06
+2025-11-20 17:27:37 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 3         538630        22961  ...          5.22      17.40
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 4         539475        22968  ...          2.99       9.95
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - [5 rows x 16 columns]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 116.70it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 115.49it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 78.93it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 78.67it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 97.67it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 97.52it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 73.16it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 73.07it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 62.90it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 62.90it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 62.90it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 62.90it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 62.75it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:38 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 5090.17it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 3493.80it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 151.43it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 150.01it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 183.70it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 182.81it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 76.72it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 76.56it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 63.92it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 63.92it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 63.92it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 63.92it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 63.70it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/2 [00:00<?, ?it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/2 [00:00<?, ?it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 1/2 [00:00<00:00, 6775.94it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 1/2 [00:00<00:00, 4728.64it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 2/2 [00:00<00:00, 62.99it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 2/2 [00:00<00:00, 62.70it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 2/2 [00:00<00:00, 62.59it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 2/2 [00:00<00:00, 62.46it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:39 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 4960.74it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 3889.02it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 153.41it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 152.06it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 219.81it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 218.32it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 65.45it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 65.45it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 65.45it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 65.45it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 65.45it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 65.45it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 53.83it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 3271.69it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 2577.94it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 140.75it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 140.01it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 205.09it/s]
+2025-11-20 17:27:40 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 204.04it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 69.95it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 69.95it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 69.95it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 69.95it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 69.95it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 69.95it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 58.76it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 3645.64it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 2874.78it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 156.96it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 155.30it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 224.27it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 222.73it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 69.27it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 69.27it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 69.27it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 69.27it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 69.27it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 69.27it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 56.59it/s]
+2025-11-20 17:27:41 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 4807.23it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 3778.65it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 153.80it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 152.31it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 220.90it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 219.67it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 73.97it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 73.97it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 73.97it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 73.97it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 73.97it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 73.97it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 60.24it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 3350.08it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 2657.15it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 138.54it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 137.43it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 200.78it/s]
+2025-11-20 17:27:42 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 199.59it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 63.85it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 63.85it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 63.85it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 63.85it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 63.85it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 63.85it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 37.21it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/11 [00:00<?, ?it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 2853.27it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  18%|█▊        | 2/11 [00:00<00:00, 2141.59it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 147.39it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  36%|███▋      | 4/11 [00:00<00:00, 146.60it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 214.32it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  55%|█████▍    | 6/11 [00:00<00:00, 213.58it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 63.81it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 63.81it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  82%|████████▏ | 9/11 [00:00<00:00, 63.81it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 63.81it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 63.81it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 63.81it/s]
+2025-11-20 17:27:43 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 11/11 [00:00<00:00, 54.56it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/8 [00:00<?, ?it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 3703.58it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  25%|██▌       | 2/8 [00:00<00:00, 2796.20it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 160.22it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  50%|█████     | 4/8 [00:00<00:00, 159.37it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 196.99it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  62%|██████▎   | 5/8 [00:00<00:00, 196.36it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 84.51it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  88%|████████▊ | 7/8 [00:00<00:00, 84.31it/s]
+2025-11-20 17:27:44 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 66.76it/s]
+2025-11-20 17:27:45 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 66.76it/s]
+2025-11-20 17:27:45 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 66.76it/s]
+2025-11-20 17:27:45 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 66.76it/s]
+2025-11-20 17:27:45 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 8/8 [00:00<00:00, 66.53it/s]
+2025-11-20 17:27:45 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - ✅ Expectations (fct_sales) définies, lancement de la validation...
+2025-11-20 17:27:45 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:45 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/60 [00:00<?, ?it/s]
+2025-11-20 17:27:45 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   0%|          | 0/60 [00:00<?, ?it/s]
+2025-11-20 17:27:45 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   5%|▌         | 3/60 [00:00<00:00, 4172.05it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:   5%|▌         | 3/60 [00:00<00:00, 2518.60it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  10%|█         | 6/60 [00:00<00:00, 118.39it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  10%|█         | 6/60 [00:00<00:00, 117.32it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  35%|███▌      | 21/60 [00:00<00:00, 379.48it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  35%|███▌      | 21/60 [00:00<00:00, 375.73it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  75%|███████▌  | 45/60 [00:00<00:00, 52.70it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  75%|███████▌  | 45/60 [00:00<00:00, 52.70it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics:  75%|███████▌  | 45/60 [00:00<00:00, 52.70it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 60/60 [00:01<00:00, 59.83it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 60/60 [00:01<00:00, 59.83it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 60/60 [00:01<00:00, 59.83it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 60/60 [00:01<00:00, 59.83it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Calculating Metrics: 100%|██████████| 60/60 [00:01<00:00, 58.04it/s]
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 🏁 Résultat fct_sales : success = True
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 📄 Rapport Data Docs (fct_sales) : /usr/src/app/gx/validation_docs/fct_sales_validation.html
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - 🏠 Page d'accueil générée : /usr/src/app/gx/validation_docs/index.html
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - ✅ Pipeline GE terminé. Rapports disponibles dans gx/validation_docs/
+2025-11-20 17:27:46 +0000 - dagster - INFO - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - ✅ Great Expectations validation OK
+2025-11-20 17:27:46 +0000 - dagster - DEBUG - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - 72390 - gx_validation_op - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2025-11-20 17:27:46 +0000 - dagster - DEBUG - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - gx_validation_op - Writing file at: /opt/dagster_home/storage/2a55fb5f-d659-4307-8a71-3eda43969c10/gx_validation_op/result using PickledObjectFilesystemIOManager...
+2025-11-20 17:27:47 +0000 - dagster - DEBUG - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - 72390 - gx_validation_op - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2025-11-20 17:27:47 +0000 - dagster - DEBUG - data_quality_job - 2a55fb5f-d659-4307-8a71-3eda43969c10 - 72390 - gx_validation_op - STEP_SUCCESS - Finished execution of step "gx_validation_op" in 18.61s.

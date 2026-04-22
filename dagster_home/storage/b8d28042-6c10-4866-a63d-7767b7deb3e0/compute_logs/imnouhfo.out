@@ -1,0 +1,4 @@
+▶️ Running dbt run + test...
+
+bash: line 1: cd: /usr/app: No such file or directory
+

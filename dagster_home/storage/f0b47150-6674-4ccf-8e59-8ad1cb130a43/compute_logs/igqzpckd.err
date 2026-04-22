@@ -1,0 +1,78 @@
+2025-11-20 00:35:58 +0000 - dagster - DEBUG - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - 781 - LOGS_CAPTURED - Started capturing logs in process (pid: 781).
+2025-11-20 00:35:58 +0000 - dagster - DEBUG - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - 781 - dbt_run_op - STEP_START - Started execution of step "dbt_run_op".
+2025-11-20 00:35:58 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - 🚀 Running dbt run + dbt test...
+2025-11-20 00:36:02 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:02  Running with dbt=1.10.15
+2025-11-20 00:36:03 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:03  Registered adapter: postgres=1.9.1
+2025-11-20 00:36:12 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:12  [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+2025-11-20 00:36:12 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - functionality
+2025-11-20 00:36:12 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - Found top-level arguments to test
+2025-11-20 00:36:12 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - `dbt_expectations.expect_column_values_to_be_between`. Arguments to generic
+2025-11-20 00:36:12 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - tests should be nested under the `arguments` property.`
+2025-11-20 00:36:13 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:13  Found 2 models, 9 data tests, 1 source, 841 macros
+2025-11-20 00:36:13 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:13
+2025-11-20 00:36:13 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:13  Concurrency: 4 threads (target='dev')
+2025-11-20 00:36:13 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:13
+2025-11-20 00:36:14 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:13  1 of 2 START sql table model analytics.stg_sales_data .......................... [RUN]
+2025-11-20 00:36:25 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:25  1 of 2 OK created sql table model analytics.stg_sales_data ..................... [[32mSELECT 520748[0m in 11.10s]
+2025-11-20 00:36:25 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:25  2 of 2 START sql table model analytics.fct_sales ............................... [RUN]
+2025-11-20 00:36:28 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:28  2 of 2 OK created sql table model analytics.fct_sales .......................... [[32mSELECT 519586[0m in 3.54s]
+2025-11-20 00:36:28 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:28
+2025-11-20 00:36:28 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:28  Finished running 2 table models in 0 hours 0 minutes and 15.11 seconds (15.11s).
+2025-11-20 00:36:28 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:28
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:28  [32mCompleted successfully[0m
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:28
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:28  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:28  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - Summary of encountered deprecations:
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - - MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - To see all deprecation instances instead of just the first occurrence of each,
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - run command again with the `--show-all-deprecations` flag. You may also need to
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - run with `--no-partial-parse` as some deprecations are only encountered during
+2025-11-20 00:36:29 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - parsing.
+2025-11-20 00:36:33 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:33  Running with dbt=1.10.15
+2025-11-20 00:36:33 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:33  Registered adapter: postgres=1.9.1
+2025-11-20 00:36:41 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:41  [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+2025-11-20 00:36:41 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - functionality
+2025-11-20 00:36:41 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - Found top-level arguments to test
+2025-11-20 00:36:41 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - `dbt_expectations.expect_column_values_to_be_between`. Arguments to generic
+2025-11-20 00:36:41 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - tests should be nested under the `arguments` property.`
+2025-11-20 00:36:42 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:42  Found 2 models, 9 data tests, 1 source, 841 macros
+2025-11-20 00:36:42 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:42
+2025-11-20 00:36:42 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:42  Concurrency: 4 threads (target='dev')
+2025-11-20 00:36:42 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:42
+2025-11-20 00:36:42 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:42  1 of 9 START test dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0  [RUN]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:42  2 of 9 START test dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01  [RUN]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:42  3 of 9 START test dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1  [RUN]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:42  4 of 9 START test dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code  [RUN]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  3 of 9 PASS dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1  [[32mPASS[0m in 0.42s]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  5 of 9 START test not_null_fct_sales_invoice_date .............................. [RUN]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  2 of 9 PASS dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01  [[32mPASS[0m in 0.45s]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  1 of 9 PASS dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0  [[32mPASS[0m in 0.46s]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  6 of 9 START test not_null_fct_sales_invoice_number ............................ [RUN]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  7 of 9 START test not_null_fct_sales_price_per_unit ............................ [RUN]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  6 of 9 PASS not_null_fct_sales_invoice_number .................................. [[32mPASS[0m in 0.23s]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  8 of 9 START test not_null_fct_sales_product_code .............................. [RUN]
+2025-11-20 00:36:43 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  5 of 9 PASS not_null_fct_sales_invoice_date .................................... [[32mPASS[0m in 0.30s]
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  9 of 9 START test not_null_fct_sales_quantity_sold ............................. [RUN]
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  7 of 9 PASS not_null_fct_sales_price_per_unit .................................. [[32mPASS[0m in 0.32s]
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  8 of 9 PASS not_null_fct_sales_product_code .................................... [[32mPASS[0m in 0.23s]
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:43  9 of 9 PASS not_null_fct_sales_quantity_sold ................................... [[32mPASS[0m in 0.25s]
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:44  4 of 9 PASS dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code  [[32mPASS[0m in 1.55s]
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:44
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:44  Finished running 9 data tests in 0 hours 0 minutes and 1.97 seconds (1.97s).
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:44
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:44  [32mCompleted successfully[0m
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:44
+2025-11-20 00:36:44 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:44  Done. PASS=9 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=9
+2025-11-20 00:36:45 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - [0m00:36:44  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+2025-11-20 00:36:45 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - Summary of encountered deprecations:
+2025-11-20 00:36:45 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - - MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+2025-11-20 00:36:45 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - To see all deprecation instances instead of just the first occurrence of each,
+2025-11-20 00:36:45 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - run command again with the `--show-all-deprecations` flag. You may also need to
+2025-11-20 00:36:45 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - run with `--no-partial-parse` as some deprecations are only encountered during
+2025-11-20 00:36:45 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - parsing.
+2025-11-20 00:36:46 +0000 - dagster - INFO - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - ✅ DBT completed successfully (run + test)
+2025-11-20 00:36:46 +0000 - dagster - DEBUG - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - 781 - dbt_run_op - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2025-11-20 00:36:46 +0000 - dagster - DEBUG - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - dbt_run_op - Writing file at: /opt/dagster_home/storage/f0b47150-6674-4ccf-8e59-8ad1cb130a43/dbt_run_op/result using PickledObjectFilesystemIOManager...
+2025-11-20 00:36:46 +0000 - dagster - DEBUG - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - 781 - dbt_run_op - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2025-11-20 00:36:46 +0000 - dagster - DEBUG - data_quality_job - f0b47150-6674-4ccf-8e59-8ad1cb130a43 - 781 - dbt_run_op - STEP_SUCCESS - Finished execution of step "dbt_run_op" in 48.0s.

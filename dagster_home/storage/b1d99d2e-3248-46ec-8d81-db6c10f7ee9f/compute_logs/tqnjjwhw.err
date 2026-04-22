@@ -1,0 +1,26 @@
+2025-11-19 22:52:10 +0000 - dagster - DEBUG - data_quality_job - b1d99d2e-3248-46ec-8d81-db6c10f7ee9f - 943 - LOGS_CAPTURED - Started capturing logs in process (pid: 943).
+2025-11-19 22:52:10 +0000 - dagster - DEBUG - data_quality_job - b1d99d2e-3248-46ec-8d81-db6c10f7ee9f - 943 - dbt_run_op - STEP_START - Started execution of step "dbt_run_op".
+2025-11-19 22:52:10 +0000 - dagster - INFO - data_quality_job - b1d99d2e-3248-46ec-8d81-db6c10f7ee9f - dbt_run_op - ▶️ Running dbt run + test...
+2025-11-19 22:52:14 +0000 - dagster - INFO - data_quality_job - b1d99d2e-3248-46ec-8d81-db6c10f7ee9f - dbt_run_op - [0m22:52:14  Running with dbt=1.10.15
+2025-11-19 22:52:15 +0000 - dagster - INFO - data_quality_job - b1d99d2e-3248-46ec-8d81-db6c10f7ee9f - dbt_run_op - [0m22:52:15  Registered adapter: postgres=1.9.1
+2025-11-19 22:52:15 +0000 - dagster - INFO - data_quality_job - b1d99d2e-3248-46ec-8d81-db6c10f7ee9f - dbt_run_op - [0m22:52:15  Encountered an error:
+2025-11-19 22:52:15 +0000 - dagster - INFO - data_quality_job - b1d99d2e-3248-46ec-8d81-db6c10f7ee9f - dbt_run_op - Compilation Error
+2025-11-19 22:52:15 +0000 - dagster - INFO - data_quality_job - b1d99d2e-3248-46ec-8d81-db6c10f7ee9f - dbt_run_op - dbt found 3 package(s) specified in packages.yml, but only 2 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+2025-11-19 22:52:17 +0000 - dagster - ERROR - data_quality_job - b1d99d2e-3248-46ec-8d81-db6c10f7ee9f - 943 - dbt_run_op - STEP_FAILURE - Execution of step "dbt_run_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "dbt_run_op"::
+
+Exception: ❌ dbt failed — check logs above for details
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/ops/dbt_op.py", line 31, in dbt_run_op
+    raise Exception("❌ dbt failed — check logs above for details")
+

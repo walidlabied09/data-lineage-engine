@@ -1,0 +1,70 @@
+[0m04:40:00  Running with dbt=1.10.15
+[0m04:40:00  Registered adapter: postgres=1.9.1
+[0m04:40:06  [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_column_values_to_be_between`. Arguments to generic
+tests should be nested under the `arguments` property.`
+[0m04:40:06  Found 2 models, 9 data tests, 1 source, 840 macros
+[0m04:40:06
+[0m04:40:06  Concurrency: 4 threads (target='dev')
+[0m04:40:06
+[0m04:40:07  1 of 2 START sql table model analytics.stg_sales_data .......................... [RUN]
+[0m04:40:14  1 of 2 OK created sql table model analytics.stg_sales_data ..................... [[32mSELECT 520748[0m in 7.38s]
+[0m04:40:14  2 of 2 START sql table model analytics.fct_sales ............................... [RUN]
+[0m04:40:16  2 of 2 OK created sql table model analytics.fct_sales .......................... [[32mSELECT 519586[0m in 1.76s]
+[0m04:40:16
+[0m04:40:16  Finished running 2 table models in 0 hours 0 minutes and 9.36 seconds (9.36s).
+[0m04:40:16
+[0m04:40:16  [32mCompleted successfully[0m
+[0m04:40:16
+[0m04:40:16  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m04:40:16  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m04:40:18  Running with dbt=1.10.15
+[0m04:40:19  Registered adapter: postgres=1.9.1
+[0m04:40:22  [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_column_values_to_be_between`. Arguments to generic
+tests should be nested under the `arguments` property.`
+[0m04:40:23  Found 2 models, 9 data tests, 1 source, 840 macros
+[0m04:40:23
+[0m04:40:23  Concurrency: 4 threads (target='dev')
+[0m04:40:23
+[0m04:40:23  1 of 9 START test dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0  [RUN]
+[0m04:40:23  2 of 9 START test dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01  [RUN]
+[0m04:40:23  3 of 9 START test dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1  [RUN]
+[0m04:40:23  4 of 9 START test dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code  [RUN]
+[0m04:40:23  1 of 9 PASS dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0  [[32mPASS[0m in 0.20s]
+[0m04:40:23  3 of 9 PASS dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1  [[32mPASS[0m in 0.20s]
+[0m04:40:23  2 of 9 PASS dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01  [[32mPASS[0m in 0.21s]
+[0m04:40:23  5 of 9 START test not_null_fct_sales_invoice_date .............................. [RUN]
+[0m04:40:23  6 of 9 START test not_null_fct_sales_invoice_number ............................ [RUN]
+[0m04:40:23  7 of 9 START test not_null_fct_sales_price_per_unit ............................ [RUN]
+[0m04:40:24  6 of 9 PASS not_null_fct_sales_invoice_number .................................. [[32mPASS[0m in 0.22s]
+[0m04:40:24  8 of 9 START test not_null_fct_sales_product_code .............................. [RUN]
+[0m04:40:24  7 of 9 PASS not_null_fct_sales_price_per_unit .................................. [[32mPASS[0m in 0.17s]
+[0m04:40:24  5 of 9 PASS not_null_fct_sales_invoice_date .................................... [[32mPASS[0m in 0.26s]
+[0m04:40:24  9 of 9 START test not_null_fct_sales_quantity_sold ............................. [RUN]
+[0m04:40:24  8 of 9 PASS not_null_fct_sales_product_code .................................... [[32mPASS[0m in 0.13s]
+[0m04:40:24  9 of 9 PASS not_null_fct_sales_quantity_sold ................................... [[32mPASS[0m in 0.15s]
+[0m04:40:24  4 of 9 PASS dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code  [[32mPASS[0m in 0.79s]
+[0m04:40:24
+[0m04:40:24  Finished running 9 data tests in 0 hours 0 minutes and 0.93 seconds (0.93s).
+[0m04:40:24
+[0m04:40:24  [32mCompleted successfully[0m
+[0m04:40:24
+[0m04:40:24  Done. PASS=9 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=9
+[0m04:40:24  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.

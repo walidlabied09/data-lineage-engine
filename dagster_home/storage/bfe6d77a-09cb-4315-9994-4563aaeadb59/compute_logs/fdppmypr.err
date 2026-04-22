@@ -1,0 +1,21 @@
+2025-11-18 04:07:15 +0000 - dagster - DEBUG - data_quality_job - bfe6d77a-09cb-4315-9994-4563aaeadb59 - 957 - LOGS_CAPTURED - Started capturing logs in process (pid: 957).
+2025-11-18 04:07:15 +0000 - dagster - DEBUG - data_quality_job - bfe6d77a-09cb-4315-9994-4563aaeadb59 - 957 - airbyte_sync_op - STEP_START - Started execution of step "airbyte_sync_op".
+2025-11-18 04:07:15 +0000 - dagster - INFO - data_quality_job - bfe6d77a-09cb-4315-9994-4563aaeadb59 - airbyte_sync_op - 🚀 Lancement sync Airbyte pour 856b8928be960960323bbe3578181174f69e334ce0fbb2becaaee47b0a1b675d
+2025-11-18 04:07:15 +0000 - dagster - ERROR - data_quality_job - bfe6d77a-09cb-4315-9994-4563aaeadb59 - 957 - airbyte_sync_op - STEP_FAILURE - Execution of step "airbyte_sync_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "airbyte_sync_op"::
+
+Exception: ❌ Erreur API Airbyte (sync): {"message":"Bad Request","_links":{"self":{"href":"/api/v1/connections/sync","templated":false}},"_embedded":{"errors":[{"message":"Failed to convert argument [connectionIdRequestBody] for value [null] due to: Cannot deserialize value of type `java.util.UUID` from String \"856b8928be960960323bbe3578181174f69e334ce0fbb2becaaee47b0a1b675d\": UUID has to be represented by standard 36-char representation\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 18] (through reference chain: io.airbyte.api.model.generated.ConnectionIdRequestBody[\"connectionId\"])","path":"/connectionIdRequestBody","_links":{},"_embedded":{}}]}}
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/ops/airbyte_op.py", line 33, in airbyte_sync_op
+    raise Exception(f"❌ Erreur API Airbyte (sync): {trigger.text}")
+

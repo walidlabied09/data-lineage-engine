@@ -1,0 +1,23 @@
+2025-11-19 16:57:58 +0000 - dagster - DEBUG - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - 2646 - LOGS_CAPTURED - Started capturing logs in process (pid: 2646).
+2025-11-19 16:57:58 +0000 - dagster - DEBUG - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - 2646 - airbyte_sync_op - STEP_START - Started execution of step "airbyte_sync_op".
+2025-11-19 16:57:58 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - 🚀 Lancement du sync Airbyte pour la connexion 76375e55-5b58-4ac2-951a-d4bdfb45b99a
+2025-11-19 16:58:01 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ✅ Job Airbyte créé : 10
+2025-11-19 16:58:01 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:58:11 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:58:21 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:58:31 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:58:41 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:58:51 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:59:01 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:59:11 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:59:21 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:59:32 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:59:42 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 16:59:52 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 17:00:02 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: running
+2025-11-19 17:00:12 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - ⏱️ Statut job Airbyte 10: succeeded
+2025-11-19 17:00:12 +0000 - dagster - INFO - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - 🎉 Sync Airbyte terminé avec succès
+2025-11-19 17:00:12 +0000 - dagster - DEBUG - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - 2646 - airbyte_sync_op - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2025-11-19 17:00:12 +0000 - dagster - DEBUG - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - airbyte_sync_op - Writing file at: /opt/dagster_home/storage/350eb263-7937-4a7d-a755-d38ed308673a/airbyte_sync_op/result using PickledObjectFilesystemIOManager...
+2025-11-19 17:00:12 +0000 - dagster - DEBUG - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - 2646 - airbyte_sync_op - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2025-11-19 17:00:12 +0000 - dagster - DEBUG - data_quality_job - 350eb263-7937-4a7d-a755-d38ed308673a - 2646 - airbyte_sync_op - STEP_SUCCESS - Finished execution of step "airbyte_sync_op" in 2m13s.

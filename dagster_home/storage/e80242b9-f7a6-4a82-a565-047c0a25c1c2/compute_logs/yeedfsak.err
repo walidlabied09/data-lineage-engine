@@ -1,0 +1,50 @@
+2025-11-19 23:16:25 +0000 - dagster - DEBUG - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - 869 - LOGS_CAPTURED - Started capturing logs in process (pid: 869).
+2025-11-19 23:16:25 +0000 - dagster - DEBUG - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - 869 - airbyte_sync_op - STEP_START - Started execution of step "airbyte_sync_op".
+2025-11-19 23:16:25 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - 🚀 Lancement du sync Airbyte pour la connexion 76375e55-5b58-4ac2-951a-d4bdfb45b99a
+2025-11-19 23:16:25 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ✅ Job Airbyte créé : 18
+2025-11-19 23:16:25 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:16:30 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:16:35 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:16:40 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:16:46 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:16:51 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:16:56 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:01 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:06 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:11 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:16 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:21 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:26 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:31 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:36 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:41 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:46 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:51 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:17:56 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:01 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:06 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:11 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:16 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:22 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:27 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:32 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:37 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:42 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:47 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:52 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:18:57 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:02 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:07 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:12 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:17 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:22 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:27 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:32 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:37 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:42 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: running
+2025-11-19 23:19:47 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - ⏱️ Statut job Airbyte 18: succeeded
+2025-11-19 23:19:47 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - 🎉 Sync Airbyte terminé avec succès
+2025-11-19 23:19:47 +0000 - dagster - DEBUG - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - 869 - airbyte_sync_op - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2025-11-19 23:19:47 +0000 - dagster - DEBUG - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - airbyte_sync_op - Writing file at: /opt/dagster_home/storage/e80242b9-f7a6-4a82-a565-047c0a25c1c2/airbyte_sync_op/result using PickledObjectFilesystemIOManager...
+2025-11-19 23:19:47 +0000 - dagster - DEBUG - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - 869 - airbyte_sync_op - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2025-11-19 23:19:48 +0000 - dagster - DEBUG - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - 869 - airbyte_sync_op - STEP_SUCCESS - Finished execution of step "airbyte_sync_op" in 3m23s.

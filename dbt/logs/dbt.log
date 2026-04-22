@@ -1,0 +1,1530 @@
+
+
+============================== 11:35:56.567770 | 26f77a87-8544-4eaa-af3f-b2d9e14ca62a ==============================
+[0m11:35:56.567770 [info ] [MainThread]: Running with dbt=1.9.0
+[0m11:35:56.631048 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app', 'debug': 'False', 'version_check': 'True', 'log_path': '/usr/app/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt docs generate', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m11:35:57.024979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '26f77a87-8544-4eaa-af3f-b2d9e14ca62a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92b1f6f3b0>]}
+[0m11:35:57.135976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '26f77a87-8544-4eaa-af3f-b2d9e14ca62a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92b12d5ac0>]}
+[0m11:35:57.138881 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:35:57.404757 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m11:36:02.503113 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:36:02.505171 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:36:02.593747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '26f77a87-8544-4eaa-af3f-b2d9e14ca62a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92ae8e4dd0>]}
+[0m11:36:02.632557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '26f77a87-8544-4eaa-af3f-b2d9e14ca62a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92ae8e7c80>]}
+[0m11:36:02.634870 [info ] [MainThread]: Found 2 models, 9 data tests, 1 source, 810 macros
+[0m11:36:02.637289 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '26f77a87-8544-4eaa-af3f-b2d9e14ca62a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92ae9908c0>]}
+[0m11:36:02.642727 [info ] [MainThread]: 
+[0m11:36:02.644904 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:36:02.646905 [info ] [MainThread]: 
+[0m11:36:02.649630 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:36:02.658980 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airbyte_analytics'
+[0m11:36:02.712926 [debug] [ThreadPool]: Using postgres connection "list_airbyte_analytics"
+[0m11:36:02.715181 [debug] [ThreadPool]: On list_airbyte_analytics: BEGIN
+[0m11:36:02.717064 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:36:02.730695 [debug] [ThreadPool]: SQL status: BEGIN in 0.013 seconds
+[0m11:36:02.733577 [debug] [ThreadPool]: Using postgres connection "list_airbyte_analytics"
+[0m11:36:02.736407 [debug] [ThreadPool]: On list_airbyte_analytics: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "list_airbyte_analytics"} */
+select
+      'airbyte' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'airbyte' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'airbyte' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m11:36:02.743217 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.005 seconds
+[0m11:36:02.748010 [debug] [ThreadPool]: On list_airbyte_analytics: ROLLBACK
+[0m11:36:02.750661 [debug] [ThreadPool]: On list_airbyte_analytics: Close
+[0m11:36:02.761496 [debug] [MainThread]: Using postgres connection "master"
+[0m11:36:02.764000 [debug] [MainThread]: On master: BEGIN
+[0m11:36:02.766426 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:36:02.779431 [debug] [MainThread]: SQL status: BEGIN in 0.013 seconds
+[0m11:36:02.782343 [debug] [MainThread]: Using postgres connection "master"
+[0m11:36:02.784601 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:36:02.789774 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m11:36:02.794863 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '26f77a87-8544-4eaa-af3f-b2d9e14ca62a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92aea73470>]}
+[0m11:36:02.797640 [debug] [MainThread]: On master: ROLLBACK
+[0m11:36:02.800173 [debug] [MainThread]: On master: Close
+[0m11:36:02.808867 [debug] [Thread-1 (]: Began running node model.datalineage360.stg_sales_data
+[0m11:36:02.811668 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airbyte_analytics, now model.datalineage360.stg_sales_data)
+[0m11:36:02.814091 [debug] [Thread-1 (]: Began compiling node model.datalineage360.stg_sales_data
+[0m11:36:02.852369 [debug] [Thread-1 (]: Writing injected SQL for node "model.datalineage360.stg_sales_data"
+[0m11:36:02.871821 [debug] [Thread-1 (]: Began executing node model.datalineage360.stg_sales_data
+[0m11:36:02.874845 [debug] [Thread-1 (]: Finished running node model.datalineage360.stg_sales_data
+[0m11:36:02.878540 [debug] [Thread-3 (]: Began running node model.datalineage360.fct_sales
+[0m11:36:02.881433 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.datalineage360.fct_sales'
+[0m11:36:02.883587 [debug] [Thread-3 (]: Began compiling node model.datalineage360.fct_sales
+[0m11:36:02.892360 [debug] [Thread-3 (]: Writing injected SQL for node "model.datalineage360.fct_sales"
+[0m11:36:02.913585 [debug] [Thread-3 (]: Began executing node model.datalineage360.fct_sales
+[0m11:36:02.916879 [debug] [Thread-3 (]: Finished running node model.datalineage360.fct_sales
+[0m11:36:02.921478 [debug] [Thread-2 (]: Began running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m11:36:02.922651 [debug] [Thread-1 (]: Began running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m11:36:02.923792 [debug] [Thread-4 (]: Began running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m11:36:02.924963 [debug] [Thread-3 (]: Began running node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m11:36:02.926535 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b'
+[0m11:36:02.928606 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.datalineage360.stg_sales_data, now test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed)
+[0m11:36:02.930926 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3'
+[0m11:36:02.933005 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.datalineage360.fct_sales, now test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2)
+[0m11:36:02.935239 [debug] [Thread-2 (]: Began compiling node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m11:36:02.937583 [debug] [Thread-1 (]: Began compiling node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m11:36:02.939773 [debug] [Thread-4 (]: Began compiling node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m11:36:02.941740 [debug] [Thread-3 (]: Began compiling node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m11:36:03.003196 [debug] [Thread-2 (]: Writing injected SQL for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b"
+[0m11:36:03.006180 [debug] [Thread-1 (]: Writing injected SQL for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed"
+[0m11:36:03.019395 [debug] [Thread-4 (]: Writing injected SQL for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3"
+[0m11:36:03.043862 [debug] [Thread-3 (]: Writing injected SQL for node "test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2"
+[0m11:36:03.100523 [debug] [Thread-2 (]: Began executing node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m11:36:03.102859 [debug] [Thread-1 (]: Began executing node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m11:36:03.106589 [debug] [Thread-2 (]: Finished running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m11:36:03.107718 [debug] [Thread-3 (]: Began executing node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m11:36:03.109125 [debug] [Thread-4 (]: Began executing node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m11:36:03.113524 [debug] [Thread-1 (]: Finished running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m11:36:03.117538 [debug] [Thread-2 (]: Began running node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m11:36:03.121545 [debug] [Thread-3 (]: Finished running node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m11:36:03.125378 [debug] [Thread-4 (]: Finished running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m11:36:03.128097 [debug] [Thread-1 (]: Began running node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m11:36:03.131002 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b, now test.datalineage360.not_null_fct_sales_invoice_date.40170d736f)
+[0m11:36:03.134225 [debug] [Thread-3 (]: Began running node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m11:36:03.137339 [debug] [Thread-4 (]: Began running node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m11:36:03.141368 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed, now test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288)
+[0m11:36:03.144232 [debug] [Thread-2 (]: Began compiling node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m11:36:03.146999 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2, now test.datalineage360.not_null_fct_sales_price_per_unit.b550542012)
+[0m11:36:03.150043 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3, now test.datalineage360.not_null_fct_sales_product_code.34cf14c85f)
+[0m11:36:03.152784 [debug] [Thread-1 (]: Began compiling node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m11:36:03.172476 [debug] [Thread-2 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_invoice_date.40170d736f"
+[0m11:36:03.173508 [debug] [Thread-3 (]: Began compiling node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m11:36:03.175819 [debug] [Thread-4 (]: Began compiling node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m11:36:03.186435 [debug] [Thread-1 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288"
+[0m11:36:03.202347 [debug] [Thread-3 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_price_per_unit.b550542012"
+[0m11:36:03.210254 [debug] [Thread-2 (]: Began executing node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m11:36:03.214490 [debug] [Thread-4 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_product_code.34cf14c85f"
+[0m11:36:03.220924 [debug] [Thread-2 (]: Finished running node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m11:36:03.226107 [debug] [Thread-2 (]: Began running node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m11:36:03.229640 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.datalineage360.not_null_fct_sales_invoice_date.40170d736f, now test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7)
+[0m11:36:03.233722 [debug] [Thread-2 (]: Began compiling node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m11:36:03.235038 [debug] [Thread-3 (]: Began executing node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m11:36:03.236769 [debug] [Thread-1 (]: Began executing node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m11:36:03.237973 [debug] [Thread-4 (]: Began executing node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m11:36:03.248697 [debug] [Thread-2 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7"
+[0m11:36:03.251251 [debug] [Thread-3 (]: Finished running node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m11:36:03.254750 [debug] [Thread-1 (]: Finished running node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m11:36:03.258048 [debug] [Thread-4 (]: Finished running node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m11:36:03.276036 [debug] [Thread-2 (]: Began executing node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m11:36:03.278890 [debug] [Thread-2 (]: Finished running node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m11:36:03.284392 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:36:03.286751 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288' was properly closed.
+[0m11:36:03.289631 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_price_per_unit.b550542012' was properly closed.
+[0m11:36:03.292173 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7' was properly closed.
+[0m11:36:03.294897 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_product_code.34cf14c85f' was properly closed.
+[0m11:36:03.303201 [debug] [MainThread]: Command end result
+[0m11:36:03.594542 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/target/manifest.json
+[0m11:36:03.608519 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/target/semantic_manifest.json
+[0m11:36:03.636890 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/target/run_results.json
+[0m11:36:03.674557 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m11:36:03.676569 [info ] [MainThread]: Building catalog
+[0m11:36:03.696620 [debug] [ThreadPool]: Acquiring new postgres connection 'airbyte.information_schema'
+[0m11:36:03.712901 [debug] [ThreadPool]: Using postgres connection "airbyte.information_schema"
+[0m11:36:03.715839 [debug] [ThreadPool]: On airbyte.information_schema: BEGIN
+[0m11:36:03.718148 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:36:03.731608 [debug] [ThreadPool]: SQL status: BEGIN in 0.013 seconds
+[0m11:36:03.733969 [debug] [ThreadPool]: Using postgres connection "airbyte.information_schema"
+[0m11:36:03.736711 [debug] [ThreadPool]: On airbyte.information_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "airbyte.information_schema"} */
+
+    
+    
+
+    select
+        'airbyte' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('analytics') and
+           upper(tbl.relname) = upper('fct_sales')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('sales_data')) or (upper(sch.nspname) = upper('analytics') and
+           upper(tbl.relname) = upper('stg_sales_data')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m11:36:03.763539 [debug] [ThreadPool]: SQL status: SELECT 38 in 0.024 seconds
+[0m11:36:03.775695 [debug] [ThreadPool]: On airbyte.information_schema: ROLLBACK
+[0m11:36:03.778181 [debug] [ThreadPool]: On airbyte.information_schema: Close
+[0m11:36:03.808527 [debug] [MainThread]: Wrote artifact CatalogArtifact to /usr/app/target/catalog.json
+[0m11:36:03.932064 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/target/manifest.json
+[0m11:36:03.942302 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/target/semantic_manifest.json
+[0m11:36:03.944632 [info ] [MainThread]: Catalog written to /usr/app/target/catalog.json
+[0m11:36:03.949115 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 7.5631475, "process_in_blocks": "0", "process_kernel_time": 0.457788, "process_mem_max_rss": "109828", "process_out_blocks": "0", "process_user_time": 3.793103}
+[0m11:36:03.952536 [debug] [MainThread]: Command `dbt docs generate` succeeded at 11:36:03.952309 after 7.57 seconds
+[0m11:36:03.955040 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m11:36:03.957630 [debug] [MainThread]: Connection 'airbyte.information_schema' was properly closed.
+[0m11:36:03.960010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92b0d2ff20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92b0371880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92b0c24bf0>]}
+[0m11:36:03.962348 [debug] [MainThread]: Flushing usage events
+[0m11:36:04.862850 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:02:06.923965 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ecaa6faa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ecb19c200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ecc401ee0>]}
+
+
+============================== 12:02:06.933994 | daafdbce-62b1-4d7d-9a7d-79d465386b73 ==============================
+[0m12:02:06.933994 [info ] [MainThread]: Running with dbt=1.9.0
+[0m12:02:06.937284 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/app/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:02:07.542113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'daafdbce-62b1-4d7d-9a7d-79d465386b73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6eca9d33e0>]}
+[0m12:02:07.778086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'daafdbce-62b1-4d7d-9a7d-79d465386b73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6eca9b3830>]}
+[0m12:02:07.780696 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m12:02:08.114654 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m12:15:52.635818 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:15:52.639294 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:15:52.843236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'daafdbce-62b1-4d7d-9a7d-79d465386b73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ec9177a40>]}
+[0m12:15:53.200006 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/target/manifest.json
+[0m12:15:53.211407 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/target/semantic_manifest.json
+[0m12:15:53.262505 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'daafdbce-62b1-4d7d-9a7d-79d465386b73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ec8e117f0>]}
+[0m12:15:53.265513 [info ] [MainThread]: Found 2 models, 9 data tests, 1 source, 810 macros
+[0m12:15:53.268527 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'daafdbce-62b1-4d7d-9a7d-79d465386b73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ec90852b0>]}
+[0m12:15:53.276292 [info ] [MainThread]: 
+[0m12:15:53.279031 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:15:53.281836 [info ] [MainThread]: 
+[0m12:15:53.284877 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m12:15:53.299566 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airbyte'
+[0m12:15:53.415258 [debug] [ThreadPool]: Using postgres connection "list_airbyte"
+[0m12:15:53.417807 [debug] [ThreadPool]: On list_airbyte: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "list_airbyte"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m12:15:53.422322 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:15:53.446532 [debug] [ThreadPool]: SQL status: SELECT 26 in 0.024 seconds
+[0m12:15:53.452799 [debug] [ThreadPool]: On list_airbyte: Close
+[0m12:15:53.457987 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airbyte, now list_airbyte_analytics)
+[0m12:15:53.476248 [debug] [ThreadPool]: Using postgres connection "list_airbyte_analytics"
+[0m12:15:53.478161 [debug] [ThreadPool]: On list_airbyte_analytics: BEGIN
+[0m12:15:53.479884 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:15:53.494378 [debug] [ThreadPool]: SQL status: BEGIN in 0.014 seconds
+[0m12:15:53.496646 [debug] [ThreadPool]: Using postgres connection "list_airbyte_analytics"
+[0m12:15:53.498737 [debug] [ThreadPool]: On list_airbyte_analytics: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "list_airbyte_analytics"} */
+select
+      'airbyte' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'airbyte' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'airbyte' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m12:15:53.505794 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.005 seconds
+[0m12:15:53.509951 [debug] [ThreadPool]: On list_airbyte_analytics: ROLLBACK
+[0m12:15:53.512329 [debug] [ThreadPool]: On list_airbyte_analytics: Close
+[0m12:15:53.524854 [debug] [MainThread]: Using postgres connection "master"
+[0m12:15:53.526705 [debug] [MainThread]: On master: BEGIN
+[0m12:15:53.528414 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:15:53.543594 [debug] [MainThread]: SQL status: BEGIN in 0.015 seconds
+[0m12:15:53.545979 [debug] [MainThread]: Using postgres connection "master"
+[0m12:15:53.548230 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m12:15:53.557040 [debug] [MainThread]: SQL status: SELECT 0 in 0.006 seconds
+[0m12:15:53.562640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'daafdbce-62b1-4d7d-9a7d-79d465386b73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ecc7d08c0>]}
+[0m12:15:53.565329 [debug] [MainThread]: On master: ROLLBACK
+[0m12:15:53.567801 [debug] [MainThread]: Using postgres connection "master"
+[0m12:15:53.570923 [debug] [MainThread]: On master: BEGIN
+[0m12:15:53.574419 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m12:15:53.577049 [debug] [MainThread]: On master: COMMIT
+[0m12:15:53.579316 [debug] [MainThread]: Using postgres connection "master"
+[0m12:15:53.581613 [debug] [MainThread]: On master: COMMIT
+[0m12:15:53.583993 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m12:15:53.586348 [debug] [MainThread]: On master: Close
+[0m12:15:53.594800 [debug] [Thread-1 (]: Began running node model.datalineage360.stg_sales_data
+[0m12:15:53.597691 [info ] [Thread-1 (]: 1 of 2 START sql table model analytics.stg_sales_data .......................... [RUN]
+[0m12:15:53.601002 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airbyte_analytics, now model.datalineage360.stg_sales_data)
+[0m12:15:53.603751 [debug] [Thread-1 (]: Began compiling node model.datalineage360.stg_sales_data
+[0m12:15:53.675356 [debug] [Thread-1 (]: Writing injected SQL for node "model.datalineage360.stg_sales_data"
+[0m12:15:53.688761 [debug] [Thread-1 (]: Began executing node model.datalineage360.stg_sales_data
+[0m12:15:53.788800 [debug] [Thread-1 (]: Writing runtime sql for node "model.datalineage360.stg_sales_data"
+[0m12:15:53.801011 [debug] [Thread-1 (]: Using postgres connection "model.datalineage360.stg_sales_data"
+[0m12:15:53.803779 [debug] [Thread-1 (]: On model.datalineage360.stg_sales_data: BEGIN
+[0m12:15:53.805797 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:15:53.820316 [debug] [Thread-1 (]: SQL status: BEGIN in 0.014 seconds
+[0m12:15:53.822964 [debug] [Thread-1 (]: Using postgres connection "model.datalineage360.stg_sales_data"
+[0m12:15:53.825128 [debug] [Thread-1 (]: On model.datalineage360.stg_sales_data: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "model.datalineage360.stg_sales_data"} */
+
+  
+    
+
+  create  table "airbyte"."analytics"."stg_sales_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+with base as (
+
+    select
+        -- Nettoyage & normalisation des champs bruts (tout en texte propre)
+        nullif(trim("InvoiceNo"), '')          as invoice_no_raw,
+        nullif(trim("StockCode"), '')          as stock_code_raw,
+        nullif(trim("Description"), '')        as description_raw,
+        nullif(trim("Country"), '')            as country_raw,
+        nullif(trim("InvoiceDate"), '')        as invoice_date_raw,
+        nullif(trim(("CustomerID")::text), '') as customer_id_raw,
+        nullif(trim(("Quantity")::text), '')   as quantity_raw,
+        nullif(trim(("UnitPrice")::text), '')  as unit_price_raw
+    from "airbyte"."public"."sales_data"
+
+), typed as (
+
+    select
+        -- Identifiants + libellés
+        invoice_no_raw                as invoice_no,
+        stock_code_raw                as stock_code,
+        coalesce(description_raw, '') as description,
+
+        -- Quantity : accepter entiers et décimaux -> caster via numeric puis int
+        case
+            when quantity_raw ~ '^-?\d+(\.\d+)?$' then (quantity_raw::numeric)::int
+        end as quantity,
+
+        -- Unit price : décimal -> numeric(12,2)
+        case
+            when replace(unit_price_raw, ',', '.') ~ '^-?\d+(\.\d+)?$'
+            then replace(unit_price_raw, ',', '.')::numeric(12,2)
+        end as unit_price,
+
+        -- CustomerID : souvent "17850.000000000" -> accepter décimal et caster en bigint
+        case
+            when customer_id_raw ~ '^\d+(\.0+)?$' then (customer_id_raw::numeric)::bigint
+        end as customer_id,
+
+        -- Date : format US sans zéro à gauche, 24h, secondes optionnelles
+        coalesce(
+            to_timestamp(trim(invoice_date_raw), 'FMMM/FMDD/YYYY FMHH24:MI:SS'),
+            to_timestamp(trim(invoice_date_raw), 'FMMM/FMDD/YYYY FMHH24:MI')
+        ) as invoice_ts,
+
+        -- Pays normalisé
+        upper(regexp_replace(country_raw, '\s+', ' ', 'g')) as country
+
+    from base
+),
+
+filtered as (
+    select
+        *,
+        md5(cast(coalesce(cast(invoice_no as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(stock_code as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as sk
+    from typed
+    where invoice_no  is not null
+      and stock_code  is not null
+      and quantity    is not null
+      and unit_price  is not null
+      and invoice_ts  is not null
+),
+
+dedup as (
+    select *
+    from (
+        select
+            *,
+            row_number() over (
+                partition by sk
+                order by invoice_ts desc, quantity desc, unit_price desc
+            ) as rn
+        from filtered
+    ) x
+    where rn = 1
+)
+
+select
+    invoice_no,
+    stock_code,
+    description,
+    quantity,
+    unit_price,
+    (quantity * unit_price)::numeric(12,2) as line_amount,
+    customer_id,
+    country,
+    invoice_ts,
+    sk
+from dedup
+where quantity   >= 0
+  and unit_price >= 0
+  );
+  
+[0m12:16:07.019297 [debug] [Thread-1 (]: SQL status: SELECT 520748 in 13.192 seconds
+[0m12:16:07.032717 [debug] [Thread-1 (]: Using postgres connection "model.datalineage360.stg_sales_data"
+[0m12:16:07.035244 [debug] [Thread-1 (]: On model.datalineage360.stg_sales_data: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "model.datalineage360.stg_sales_data"} */
+alter table "airbyte"."analytics"."stg_sales_data" rename to "stg_sales_data__dbt_backup"
+[0m12:16:07.038069 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m12:16:07.046300 [debug] [Thread-1 (]: Using postgres connection "model.datalineage360.stg_sales_data"
+[0m12:16:07.048723 [debug] [Thread-1 (]: On model.datalineage360.stg_sales_data: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "model.datalineage360.stg_sales_data"} */
+alter table "airbyte"."analytics"."stg_sales_data__dbt_tmp" rename to "stg_sales_data"
+[0m12:16:07.051269 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m12:16:07.097437 [debug] [Thread-1 (]: On model.datalineage360.stg_sales_data: COMMIT
+[0m12:16:07.099438 [debug] [Thread-1 (]: Using postgres connection "model.datalineage360.stg_sales_data"
+[0m12:16:07.101232 [debug] [Thread-1 (]: On model.datalineage360.stg_sales_data: COMMIT
+[0m12:16:07.110831 [debug] [Thread-1 (]: SQL status: COMMIT in 0.008 seconds
+[0m12:16:07.124976 [debug] [Thread-1 (]: Applying DROP to: "airbyte"."analytics"."stg_sales_data__dbt_backup"
+[0m12:16:07.136944 [debug] [Thread-1 (]: Using postgres connection "model.datalineage360.stg_sales_data"
+[0m12:16:07.139956 [debug] [Thread-1 (]: On model.datalineage360.stg_sales_data: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "model.datalineage360.stg_sales_data"} */
+drop table if exists "airbyte"."analytics"."stg_sales_data__dbt_backup" cascade
+[0m12:16:07.161520 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.019 seconds
+[0m12:16:07.168650 [debug] [Thread-1 (]: On model.datalineage360.stg_sales_data: Close
+[0m12:16:07.174311 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'daafdbce-62b1-4d7d-9a7d-79d465386b73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ecb62e180>]}
+[0m12:16:07.177869 [info ] [Thread-1 (]: 1 of 2 OK created sql table model analytics.stg_sales_data ..................... [[32mSELECT 520748[0m in 13.57s]
+[0m12:16:07.181003 [debug] [Thread-1 (]: Finished running node model.datalineage360.stg_sales_data
+[0m12:16:07.184967 [debug] [Thread-3 (]: Began running node model.datalineage360.fct_sales
+[0m12:16:07.187143 [info ] [Thread-3 (]: 2 of 2 START sql table model analytics.fct_sales ............................... [RUN]
+[0m12:16:07.189163 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.datalineage360.fct_sales'
+[0m12:16:07.190880 [debug] [Thread-3 (]: Began compiling node model.datalineage360.fct_sales
+[0m12:16:07.199211 [debug] [Thread-3 (]: Writing injected SQL for node "model.datalineage360.fct_sales"
+[0m12:16:07.213146 [debug] [Thread-3 (]: Began executing node model.datalineage360.fct_sales
+[0m12:16:07.220822 [debug] [Thread-3 (]: Writing runtime sql for node "model.datalineage360.fct_sales"
+[0m12:16:07.242442 [debug] [Thread-3 (]: Using postgres connection "model.datalineage360.fct_sales"
+[0m12:16:07.245645 [debug] [Thread-3 (]: On model.datalineage360.fct_sales: BEGIN
+[0m12:16:07.248268 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:16:07.263078 [debug] [Thread-3 (]: SQL status: BEGIN in 0.015 seconds
+[0m12:16:07.265968 [debug] [Thread-3 (]: Using postgres connection "model.datalineage360.fct_sales"
+[0m12:16:07.268034 [debug] [Thread-3 (]: On model.datalineage360.fct_sales: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "model.datalineage360.fct_sales"} */
+
+  
+    
+
+  create  table "airbyte"."analytics"."fct_sales__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+    -- Clés et identifiants
+    invoice_no            as invoice_number,
+    stock_code            as product_code,
+    customer_id           as customer_identifier,
+
+    -- Infos géographiques
+    country               as customer_country,
+
+    -- Détails temporels
+    invoice_ts::timestamp as invoice_timestamp,
+    invoice_ts::date      as invoice_date,
+    extract(year  from invoice_ts) as invoice_year,
+    extract(month from invoice_ts) as invoice_month,
+    extract(day   from invoice_ts) as invoice_day,
+
+    -- Quantités et prix
+    quantity              as quantity_sold,
+    unit_price            as price_per_unit,
+
+    -- Calculs financiers
+    (quantity * unit_price)::numeric(12,2) as gross_amount,
+    case when country = 'United Kingdom'
+         then (quantity * unit_price * 0.10)
+         else 0 end                         as discount_amount,
+    ((quantity * unit_price) -
+     case when country = 'United Kingdom'
+          then (quantity * unit_price * 0.10)
+          else 0 end)::numeric(12,2)        as net_sales_amount,
+    ((unit_price - (unit_price * 0.70)) * quantity)::numeric(12,2) as gross_margin,
+
+    -- Montant ligne issu du staging
+    line_amount           as line_total
+
+from "airbyte"."analytics"."stg_sales_data"
+where quantity > 0
+  and unit_price > 0
+  );
+  
+[0m12:16:10.162104 [debug] [Thread-3 (]: SQL status: SELECT 519580 in 2.891 seconds
+[0m12:16:10.173038 [debug] [Thread-3 (]: Using postgres connection "model.datalineage360.fct_sales"
+[0m12:16:10.175857 [debug] [Thread-3 (]: On model.datalineage360.fct_sales: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "model.datalineage360.fct_sales"} */
+alter table "airbyte"."analytics"."fct_sales" rename to "fct_sales__dbt_backup"
+[0m12:16:10.237134 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.059 seconds
+[0m12:16:10.242651 [debug] [Thread-3 (]: Using postgres connection "model.datalineage360.fct_sales"
+[0m12:16:10.245684 [debug] [Thread-3 (]: On model.datalineage360.fct_sales: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "model.datalineage360.fct_sales"} */
+alter table "airbyte"."analytics"."fct_sales__dbt_tmp" rename to "fct_sales"
+[0m12:16:10.248654 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m12:16:10.252669 [debug] [Thread-3 (]: On model.datalineage360.fct_sales: COMMIT
+[0m12:16:10.254737 [debug] [Thread-3 (]: Using postgres connection "model.datalineage360.fct_sales"
+[0m12:16:10.256900 [debug] [Thread-3 (]: On model.datalineage360.fct_sales: COMMIT
+[0m12:16:10.264777 [debug] [Thread-3 (]: SQL status: COMMIT in 0.006 seconds
+[0m12:16:10.269471 [debug] [Thread-3 (]: Applying DROP to: "airbyte"."analytics"."fct_sales__dbt_backup"
+[0m12:16:10.271638 [debug] [Thread-3 (]: Using postgres connection "model.datalineage360.fct_sales"
+[0m12:16:10.274270 [debug] [Thread-3 (]: On model.datalineage360.fct_sales: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "model.datalineage360.fct_sales"} */
+drop table if exists "airbyte"."analytics"."fct_sales__dbt_backup" cascade
+[0m12:16:10.291705 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.015 seconds
+[0m12:16:10.296554 [debug] [Thread-3 (]: On model.datalineage360.fct_sales: Close
+[0m12:16:10.299548 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'daafdbce-62b1-4d7d-9a7d-79d465386b73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ec3e53e60>]}
+[0m12:16:10.302456 [info ] [Thread-3 (]: 2 of 2 OK created sql table model analytics.fct_sales .......................... [[32mSELECT 519580[0m in 3.11s]
+[0m12:16:10.305358 [debug] [Thread-3 (]: Finished running node model.datalineage360.fct_sales
+[0m12:16:10.311817 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:10.314390 [debug] [MainThread]: On master: BEGIN
+[0m12:16:10.316939 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:16:10.331145 [debug] [MainThread]: SQL status: BEGIN in 0.014 seconds
+[0m12:16:10.333372 [debug] [MainThread]: On master: COMMIT
+[0m12:16:10.335057 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:10.336745 [debug] [MainThread]: On master: COMMIT
+[0m12:16:10.338752 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m12:16:10.340643 [debug] [MainThread]: On master: Close
+[0m12:16:10.343116 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:16:10.345270 [debug] [MainThread]: Connection 'model.datalineage360.stg_sales_data' was properly closed.
+[0m12:16:10.347405 [debug] [MainThread]: Connection 'model.datalineage360.fct_sales' was properly closed.
+[0m12:16:10.349393 [info ] [MainThread]: 
+[0m12:16:10.351498 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 17.07 seconds (17.07s).
+[0m12:16:10.354564 [debug] [MainThread]: Command end result
+[0m12:16:10.470029 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/target/manifest.json
+[0m12:16:10.481094 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/target/semantic_manifest.json
+[0m12:16:10.498270 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/target/run_results.json
+[0m12:16:10.500767 [info ] [MainThread]: 
+[0m12:16:10.504549 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:16:10.507212 [info ] [MainThread]: 
+[0m12:16:10.509576 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m12:16:10.514993 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 46.947502, "process_in_blocks": "0", "process_kernel_time": 3.395348, "process_mem_max_rss": "110564", "process_out_blocks": "0", "process_user_time": 23.115532}
+[0m12:16:10.518463 [debug] [MainThread]: Command `dbt run` succeeded at 12:16:10.518155 after 46.95 seconds
+[0m12:16:10.521606 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ecb62fec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ec8eb51c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ecb468ad0>]}
+[0m12:16:10.524653 [debug] [MainThread]: Flushing usage events
+[0m12:16:11.252301 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:16:14.039181 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d20dab3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d219c59a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d20aaf980>]}
+
+
+============================== 12:16:14.046089 | 637932f8-b90a-4532-b74f-0d99ce026f97 ==============================
+[0m12:16:14.046089 [info ] [MainThread]: Running with dbt=1.9.0
+[0m12:16:14.048419 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/usr/app/logs', 'profiles_dir': '/usr/app', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt test', 'send_anonymous_usage_stats': 'True'}
+[0m12:16:14.453748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '637932f8-b90a-4532-b74f-0d99ce026f97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d205be210>]}
+[0m12:16:14.647923 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '637932f8-b90a-4532-b74f-0d99ce026f97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d205e8980>]}
+[0m12:16:14.685892 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m12:16:14.968247 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m12:16:20.439115 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:16:20.441683 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:16:20.571526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '637932f8-b90a-4532-b74f-0d99ce026f97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d1ed575c0>]}
+[0m12:16:20.894880 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/target/manifest.json
+[0m12:16:20.906338 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/target/semantic_manifest.json
+[0m12:16:20.982960 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '637932f8-b90a-4532-b74f-0d99ce026f97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d1e47f290>]}
+[0m12:16:20.985608 [info ] [MainThread]: Found 2 models, 9 data tests, 1 source, 810 macros
+[0m12:16:20.988600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '637932f8-b90a-4532-b74f-0d99ce026f97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d1ed19a60>]}
+[0m12:16:20.996095 [info ] [MainThread]: 
+[0m12:16:20.999747 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:16:21.002679 [info ] [MainThread]: 
+[0m12:16:21.005605 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m12:16:21.016801 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airbyte_analytics'
+[0m12:16:21.103618 [debug] [ThreadPool]: Using postgres connection "list_airbyte_analytics"
+[0m12:16:21.106670 [debug] [ThreadPool]: On list_airbyte_analytics: BEGIN
+[0m12:16:21.109817 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:16:21.133709 [debug] [ThreadPool]: SQL status: BEGIN in 0.024 seconds
+[0m12:16:21.136721 [debug] [ThreadPool]: Using postgres connection "list_airbyte_analytics"
+[0m12:16:21.138574 [debug] [ThreadPool]: On list_airbyte_analytics: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "list_airbyte_analytics"} */
+select
+      'airbyte' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'airbyte' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'airbyte' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m12:16:21.146338 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.005 seconds
+[0m12:16:21.150924 [debug] [ThreadPool]: On list_airbyte_analytics: ROLLBACK
+[0m12:16:21.153544 [debug] [ThreadPool]: On list_airbyte_analytics: Close
+[0m12:16:21.168123 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:21.170224 [debug] [MainThread]: On master: BEGIN
+[0m12:16:21.172149 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:16:21.185068 [debug] [MainThread]: SQL status: BEGIN in 0.013 seconds
+[0m12:16:21.187254 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:21.189446 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m12:16:21.196774 [debug] [MainThread]: SQL status: SELECT 0 in 0.005 seconds
+[0m12:16:21.200660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '637932f8-b90a-4532-b74f-0d99ce026f97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d223e46e0>]}
+[0m12:16:21.203369 [debug] [MainThread]: On master: ROLLBACK
+[0m12:16:21.205565 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:21.208030 [debug] [MainThread]: On master: BEGIN
+[0m12:16:21.210477 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m12:16:21.213150 [debug] [MainThread]: On master: COMMIT
+[0m12:16:21.216141 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:21.218984 [debug] [MainThread]: On master: COMMIT
+[0m12:16:21.221627 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m12:16:21.223805 [debug] [MainThread]: On master: Close
+[0m12:16:21.231923 [debug] [Thread-1 (]: Began running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m12:16:21.232913 [debug] [Thread-2 (]: Began running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m12:16:21.233997 [debug] [Thread-3 (]: Began running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m12:16:21.234898 [debug] [Thread-4 (]: Began running node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m12:16:21.236133 [info ] [Thread-1 (]: 1 of 9 START test dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0  [RUN]
+[0m12:16:21.238120 [info ] [Thread-2 (]: 2 of 9 START test dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01  [RUN]
+[0m12:16:21.240156 [info ] [Thread-3 (]: 3 of 9 START test dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1  [RUN]
+[0m12:16:21.242286 [info ] [Thread-4 (]: 4 of 9 START test dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code  [RUN]
+[0m12:16:21.244645 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airbyte_analytics, now test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b)
+[0m12:16:21.246982 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed'
+[0m12:16:21.249555 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3'
+[0m12:16:21.251731 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2'
+[0m12:16:21.253582 [debug] [Thread-1 (]: Began compiling node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m12:16:21.255208 [debug] [Thread-2 (]: Began compiling node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m12:16:21.256804 [debug] [Thread-3 (]: Began compiling node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m12:16:21.258446 [debug] [Thread-4 (]: Began compiling node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m12:16:21.316024 [debug] [Thread-2 (]: Writing injected SQL for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed"
+[0m12:16:21.321450 [debug] [Thread-1 (]: Writing injected SQL for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b"
+[0m12:16:21.329548 [debug] [Thread-3 (]: Writing injected SQL for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3"
+[0m12:16:21.348073 [debug] [Thread-4 (]: Writing injected SQL for node "test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2"
+[0m12:16:21.361164 [debug] [Thread-1 (]: Began executing node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m12:16:21.363824 [debug] [Thread-2 (]: Began executing node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m12:16:21.372339 [debug] [Thread-4 (]: Began executing node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m12:16:21.382669 [debug] [Thread-3 (]: Began executing node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m12:16:21.458518 [debug] [Thread-1 (]: Writing runtime sql for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b"
+[0m12:16:21.467298 [debug] [Thread-2 (]: Writing runtime sql for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed"
+[0m12:16:21.469614 [debug] [Thread-4 (]: Writing runtime sql for node "test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2"
+[0m12:16:21.479389 [debug] [Thread-3 (]: Writing runtime sql for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3"
+[0m12:16:21.492778 [debug] [Thread-1 (]: Using postgres connection "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b"
+[0m12:16:21.495542 [debug] [Thread-2 (]: Using postgres connection "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed"
+[0m12:16:21.498484 [debug] [Thread-3 (]: Using postgres connection "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3"
+[0m12:16:21.500190 [debug] [Thread-1 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b: BEGIN
+[0m12:16:21.501841 [debug] [Thread-4 (]: Using postgres connection "test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2"
+[0m12:16:21.504975 [debug] [Thread-2 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed: BEGIN
+[0m12:16:21.509247 [debug] [Thread-3 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3: BEGIN
+[0m12:16:21.512757 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:16:21.514998 [debug] [Thread-4 (]: On test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2: BEGIN
+[0m12:16:21.517604 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:16:21.520224 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:16:21.525100 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:16:21.541097 [debug] [Thread-1 (]: SQL status: BEGIN in 0.028 seconds
+[0m12:16:21.543812 [debug] [Thread-1 (]: Using postgres connection "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b"
+[0m12:16:21.545503 [debug] [Thread-2 (]: SQL status: BEGIN in 0.028 seconds
+[0m12:16:21.547315 [debug] [Thread-1 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+
+
+
+
+
+
+    with grouped_expression as (
+    select
+        
+        
+    
+  
+( 1=1 and net_sales_amount >= 0
+)
+ as expression
+
+
+    from "airbyte"."analytics"."fct_sales"
+    
+
+),
+validation_errors as (
+
+    select
+        *
+    from
+        grouped_expression
+    where
+        not(expression = true)
+
+)
+
+select *
+from validation_errors
+
+
+
+
+
+
+
+
+      
+    ) dbt_internal_test
+[0m12:16:21.549887 [debug] [Thread-3 (]: SQL status: BEGIN in 0.030 seconds
+[0m12:16:21.551037 [debug] [Thread-2 (]: Using postgres connection "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed"
+[0m12:16:21.552431 [debug] [Thread-4 (]: SQL status: BEGIN in 0.027 seconds
+[0m12:16:21.556504 [debug] [Thread-3 (]: Using postgres connection "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3"
+[0m12:16:21.559412 [debug] [Thread-2 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+
+
+
+
+
+
+    with grouped_expression as (
+    select
+        
+        
+    
+  
+( 1=1 and price_per_unit >= 0.01
+)
+ as expression
+
+
+    from "airbyte"."analytics"."fct_sales"
+    
+
+),
+validation_errors as (
+
+    select
+        *
+    from
+        grouped_expression
+    where
+        not(expression = true)
+
+)
+
+select *
+from validation_errors
+
+
+
+
+
+
+
+
+      
+    ) dbt_internal_test
+[0m12:16:21.562308 [debug] [Thread-4 (]: Using postgres connection "test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2"
+[0m12:16:21.565033 [debug] [Thread-3 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+
+
+
+
+
+
+    with grouped_expression as (
+    select
+        
+        
+    
+  
+( 1=1 and quantity_sold >= 1
+)
+ as expression
+
+
+    from "airbyte"."analytics"."fct_sales"
+    
+
+),
+validation_errors as (
+
+    select
+        *
+    from
+        grouped_expression
+    where
+        not(expression = true)
+
+)
+
+select *
+from validation_errors
+
+
+
+
+
+
+
+
+      
+    ) dbt_internal_test
+[0m12:16:21.568458 [debug] [Thread-4 (]: On test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+
+
+
+
+
+with validation_errors as (
+
+    select
+        invoice_number, product_code
+    from "airbyte"."analytics"."fct_sales"
+    group by invoice_number, product_code
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+      
+    ) dbt_internal_test
+[0m12:16:21.656795 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.086 seconds
+[0m12:16:21.671319 [debug] [Thread-3 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3: ROLLBACK
+[0m12:16:21.674838 [debug] [Thread-3 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3: Close
+[0m12:16:21.678211 [info ] [Thread-3 (]: 3 of 9 PASS dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1  [[32mPASS[0m in 0.43s]
+[0m12:16:21.682814 [debug] [Thread-3 (]: Finished running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m12:16:21.684025 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.129 seconds
+[0m12:16:21.685228 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.118 seconds
+[0m12:16:21.686680 [debug] [Thread-3 (]: Began running node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m12:16:21.690925 [debug] [Thread-1 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b: ROLLBACK
+[0m12:16:21.696135 [debug] [Thread-2 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed: ROLLBACK
+[0m12:16:21.699089 [info ] [Thread-3 (]: 5 of 9 START test not_null_fct_sales_invoice_date .............................. [RUN]
+[0m12:16:21.702932 [debug] [Thread-1 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b: Close
+[0m12:16:21.706545 [debug] [Thread-2 (]: On test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed: Close
+[0m12:16:21.709659 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3, now test.datalineage360.not_null_fct_sales_invoice_date.40170d736f)
+[0m12:16:21.713325 [info ] [Thread-1 (]: 1 of 9 PASS dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0  [[32mPASS[0m in 0.47s]
+[0m12:16:21.716408 [info ] [Thread-2 (]: 2 of 9 PASS dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01  [[32mPASS[0m in 0.47s]
+[0m12:16:21.718856 [debug] [Thread-3 (]: Began compiling node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m12:16:21.722651 [debug] [Thread-1 (]: Finished running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m12:16:21.727435 [debug] [Thread-2 (]: Finished running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m12:16:21.747494 [debug] [Thread-3 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_invoice_date.40170d736f"
+[0m12:16:21.748832 [debug] [Thread-1 (]: Began running node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m12:16:21.751391 [debug] [Thread-2 (]: Began running node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m12:16:21.755314 [info ] [Thread-1 (]: 6 of 9 START test not_null_fct_sales_invoice_number ............................ [RUN]
+[0m12:16:21.757995 [info ] [Thread-2 (]: 7 of 9 START test not_null_fct_sales_price_per_unit ............................ [RUN]
+[0m12:16:21.761470 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b, now test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288)
+[0m12:16:21.765201 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed, now test.datalineage360.not_null_fct_sales_price_per_unit.b550542012)
+[0m12:16:21.770493 [debug] [Thread-1 (]: Began compiling node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m12:16:21.774147 [debug] [Thread-3 (]: Began executing node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m12:16:21.775676 [debug] [Thread-2 (]: Began compiling node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m12:16:21.792862 [debug] [Thread-1 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288"
+[0m12:16:21.805504 [debug] [Thread-3 (]: Writing runtime sql for node "test.datalineage360.not_null_fct_sales_invoice_date.40170d736f"
+[0m12:16:21.822096 [debug] [Thread-2 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_price_per_unit.b550542012"
+[0m12:16:21.839094 [debug] [Thread-1 (]: Began executing node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m12:16:21.851502 [debug] [Thread-2 (]: Began executing node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m12:16:21.855950 [debug] [Thread-1 (]: Writing runtime sql for node "test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288"
+[0m12:16:21.864517 [debug] [Thread-3 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_invoice_date.40170d736f"
+[0m12:16:21.868271 [debug] [Thread-2 (]: Writing runtime sql for node "test.datalineage360.not_null_fct_sales_price_per_unit.b550542012"
+[0m12:16:21.872302 [debug] [Thread-3 (]: On test.datalineage360.not_null_fct_sales_invoice_date.40170d736f: BEGIN
+[0m12:16:21.876419 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:16:21.883391 [debug] [Thread-1 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288"
+[0m12:16:21.885116 [debug] [Thread-2 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_price_per_unit.b550542012"
+[0m12:16:21.887330 [debug] [Thread-1 (]: On test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288: BEGIN
+[0m12:16:21.889901 [debug] [Thread-2 (]: On test.datalineage360.not_null_fct_sales_price_per_unit.b550542012: BEGIN
+[0m12:16:21.891728 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:16:21.893461 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:16:21.897035 [debug] [Thread-3 (]: SQL status: BEGIN in 0.021 seconds
+[0m12:16:21.899185 [debug] [Thread-3 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_invoice_date.40170d736f"
+[0m12:16:21.901150 [debug] [Thread-3 (]: On test.datalineage360.not_null_fct_sales_invoice_date.40170d736f: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "test.datalineage360.not_null_fct_sales_invoice_date.40170d736f"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select invoice_date
+from "airbyte"."analytics"."fct_sales"
+where invoice_date is null
+
+
+
+      
+    ) dbt_internal_test
+[0m12:16:21.908475 [debug] [Thread-2 (]: SQL status: BEGIN in 0.015 seconds
+[0m12:16:21.910993 [debug] [Thread-2 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_price_per_unit.b550542012"
+[0m12:16:21.912206 [debug] [Thread-1 (]: SQL status: BEGIN in 0.020 seconds
+[0m12:16:21.913875 [debug] [Thread-2 (]: On test.datalineage360.not_null_fct_sales_price_per_unit.b550542012: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "test.datalineage360.not_null_fct_sales_price_per_unit.b550542012"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select price_per_unit
+from "airbyte"."analytics"."fct_sales"
+where price_per_unit is null
+
+
+
+      
+    ) dbt_internal_test
+[0m12:16:21.915898 [debug] [Thread-1 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288"
+[0m12:16:21.919722 [debug] [Thread-1 (]: On test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select invoice_number
+from "airbyte"."analytics"."fct_sales"
+where invoice_number is null
+
+
+
+      
+    ) dbt_internal_test
+[0m12:16:21.965291 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.062 seconds
+[0m12:16:21.972136 [debug] [Thread-3 (]: On test.datalineage360.not_null_fct_sales_invoice_date.40170d736f: ROLLBACK
+[0m12:16:21.974932 [debug] [Thread-3 (]: On test.datalineage360.not_null_fct_sales_invoice_date.40170d736f: Close
+[0m12:16:21.977705 [info ] [Thread-3 (]: 5 of 9 PASS not_null_fct_sales_invoice_date .................................... [[32mPASS[0m in 0.27s]
+[0m12:16:21.980540 [debug] [Thread-3 (]: Finished running node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m12:16:21.981449 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.056 seconds
+[0m12:16:21.983125 [debug] [Thread-3 (]: Began running node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m12:16:21.988477 [debug] [Thread-1 (]: On test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288: ROLLBACK
+[0m12:16:21.989939 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.071 seconds
+[0m12:16:21.991587 [info ] [Thread-3 (]: 8 of 9 START test not_null_fct_sales_product_code .............................. [RUN]
+[0m12:16:21.994711 [debug] [Thread-1 (]: On test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288: Close
+[0m12:16:21.998622 [debug] [Thread-2 (]: On test.datalineage360.not_null_fct_sales_price_per_unit.b550542012: ROLLBACK
+[0m12:16:22.001172 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.datalineage360.not_null_fct_sales_invoice_date.40170d736f, now test.datalineage360.not_null_fct_sales_product_code.34cf14c85f)
+[0m12:16:22.004409 [info ] [Thread-1 (]: 6 of 9 PASS not_null_fct_sales_invoice_number .................................. [[32mPASS[0m in 0.24s]
+[0m12:16:22.007587 [debug] [Thread-2 (]: On test.datalineage360.not_null_fct_sales_price_per_unit.b550542012: Close
+[0m12:16:22.010149 [debug] [Thread-3 (]: Began compiling node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m12:16:22.013561 [debug] [Thread-1 (]: Finished running node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m12:16:22.016459 [info ] [Thread-2 (]: 7 of 9 PASS not_null_fct_sales_price_per_unit .................................. [[32mPASS[0m in 0.25s]
+[0m12:16:22.026648 [debug] [Thread-3 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_product_code.34cf14c85f"
+[0m12:16:22.028313 [debug] [Thread-1 (]: Began running node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m12:16:22.030507 [debug] [Thread-2 (]: Finished running node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m12:16:22.033612 [info ] [Thread-1 (]: 9 of 9 START test not_null_fct_sales_quantity_sold ............................. [RUN]
+[0m12:16:22.036740 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288, now test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7)
+[0m12:16:22.038419 [debug] [Thread-1 (]: Began compiling node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m12:16:22.049160 [debug] [Thread-1 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7"
+[0m12:16:22.049970 [debug] [Thread-3 (]: Began executing node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m12:16:22.056814 [debug] [Thread-3 (]: Writing runtime sql for node "test.datalineage360.not_null_fct_sales_product_code.34cf14c85f"
+[0m12:16:22.065282 [debug] [Thread-1 (]: Began executing node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m12:16:22.071798 [debug] [Thread-1 (]: Writing runtime sql for node "test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7"
+[0m12:16:22.074331 [debug] [Thread-3 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_product_code.34cf14c85f"
+[0m12:16:22.076052 [debug] [Thread-3 (]: On test.datalineage360.not_null_fct_sales_product_code.34cf14c85f: BEGIN
+[0m12:16:22.078002 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:16:22.083139 [debug] [Thread-1 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7"
+[0m12:16:22.085901 [debug] [Thread-1 (]: On test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7: BEGIN
+[0m12:16:22.088016 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:16:22.095097 [debug] [Thread-3 (]: SQL status: BEGIN in 0.017 seconds
+[0m12:16:22.097273 [debug] [Thread-3 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_product_code.34cf14c85f"
+[0m12:16:22.099138 [debug] [Thread-3 (]: On test.datalineage360.not_null_fct_sales_product_code.34cf14c85f: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "test.datalineage360.not_null_fct_sales_product_code.34cf14c85f"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select product_code
+from "airbyte"."analytics"."fct_sales"
+where product_code is null
+
+
+
+      
+    ) dbt_internal_test
+[0m12:16:22.101978 [debug] [Thread-1 (]: SQL status: BEGIN in 0.014 seconds
+[0m12:16:22.104189 [debug] [Thread-1 (]: Using postgres connection "test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7"
+[0m12:16:22.106450 [debug] [Thread-1 (]: On test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "node_id": "test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select quantity_sold
+from "airbyte"."analytics"."fct_sales"
+where quantity_sold is null
+
+
+
+      
+    ) dbt_internal_test
+[0m12:16:22.151359 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.050 seconds
+[0m12:16:22.157679 [debug] [Thread-3 (]: On test.datalineage360.not_null_fct_sales_product_code.34cf14c85f: ROLLBACK
+[0m12:16:22.160439 [debug] [Thread-3 (]: On test.datalineage360.not_null_fct_sales_product_code.34cf14c85f: Close
+[0m12:16:22.163353 [info ] [Thread-3 (]: 8 of 9 PASS not_null_fct_sales_product_code .................................... [[32mPASS[0m in 0.16s]
+[0m12:16:22.165947 [debug] [Thread-3 (]: Finished running node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m12:16:22.173941 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.065 seconds
+[0m12:16:22.178085 [debug] [Thread-1 (]: On test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7: ROLLBACK
+[0m12:16:22.180150 [debug] [Thread-1 (]: On test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7: Close
+[0m12:16:22.182249 [info ] [Thread-1 (]: 9 of 9 PASS not_null_fct_sales_quantity_sold ................................... [[32mPASS[0m in 0.15s]
+[0m12:16:22.184480 [debug] [Thread-1 (]: Finished running node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m12:16:22.789501 [debug] [Thread-4 (]: SQL status: SELECT 1 in 1.217 seconds
+[0m12:16:22.796405 [debug] [Thread-4 (]: On test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2: ROLLBACK
+[0m12:16:22.799860 [debug] [Thread-4 (]: On test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2: Close
+[0m12:16:22.803436 [info ] [Thread-4 (]: 4 of 9 PASS dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code  [[32mPASS[0m in 1.55s]
+[0m12:16:22.806897 [debug] [Thread-4 (]: Finished running node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m12:16:22.813483 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:22.815893 [debug] [MainThread]: On master: BEGIN
+[0m12:16:22.817907 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:16:22.837448 [debug] [MainThread]: SQL status: BEGIN in 0.019 seconds
+[0m12:16:22.840875 [debug] [MainThread]: On master: COMMIT
+[0m12:16:22.843744 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:22.846300 [debug] [MainThread]: On master: COMMIT
+[0m12:16:22.849080 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m12:16:22.851251 [debug] [MainThread]: On master: Close
+[0m12:16:22.854174 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:16:22.857141 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7' was properly closed.
+[0m12:16:22.859887 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_price_per_unit.b550542012' was properly closed.
+[0m12:16:22.862563 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_product_code.34cf14c85f' was properly closed.
+[0m12:16:22.864815 [debug] [MainThread]: Connection 'test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2' was properly closed.
+[0m12:16:22.867306 [info ] [MainThread]: 
+[0m12:16:22.870557 [info ] [MainThread]: Finished running 9 data tests in 0 hours 0 minutes and 1.86 seconds (1.86s).
+[0m12:16:22.877633 [debug] [MainThread]: Command end result
+[0m12:16:23.025224 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/target/manifest.json
+[0m12:16:23.036358 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/target/semantic_manifest.json
+[0m12:16:23.064253 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/target/run_results.json
+[0m12:16:23.066656 [info ] [MainThread]: 
+[0m12:16:23.069147 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:16:23.071784 [info ] [MainThread]: 
+[0m12:16:23.074621 [info ] [MainThread]: Done. PASS=9 WARN=0 ERROR=0 SKIP=0 TOTAL=9
+[0m12:16:23.078335 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 9.7316475, "process_in_blocks": "0", "process_kernel_time": 0.569491, "process_mem_max_rss": "113400", "process_out_blocks": "0", "process_user_time": 4.681414}
+[0m12:16:23.080785 [debug] [MainThread]: Command `dbt test` succeeded at 12:16:23.080567 after 9.73 seconds
+[0m12:16:23.083105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d2124be30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d205bf980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d1d893080>]}
+[0m12:16:23.085451 [debug] [MainThread]: Flushing usage events
+[0m12:16:24.096802 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:16:27.699189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9df067bfb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9df1e997c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9df03a1ac0>]}
+
+
+============================== 12:16:27.705835 | 153b6a62-a226-46ba-9e0f-d18337d68c52 ==============================
+[0m12:16:27.705835 [info ] [MainThread]: Running with dbt=1.9.0
+[0m12:16:27.708883 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/app/logs', 'fail_fast': 'False', 'profiles_dir': '/usr/app', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt docs generate', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:16:28.215924 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '153b6a62-a226-46ba-9e0f-d18337d68c52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9df0859b80>]}
+[0m12:16:28.371426 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '153b6a62-a226-46ba-9e0f-d18337d68c52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9df009d6a0>]}
+[0m12:16:28.375476 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m12:16:28.712352 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m12:16:34.480820 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:16:34.482496 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:16:34.581782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '153b6a62-a226-46ba-9e0f-d18337d68c52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9dee850710>]}
+[0m12:16:34.655843 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '153b6a62-a226-46ba-9e0f-d18337d68c52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9dee851880>]}
+[0m12:16:34.658708 [info ] [MainThread]: Found 2 models, 9 data tests, 1 source, 810 macros
+[0m12:16:34.661152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '153b6a62-a226-46ba-9e0f-d18337d68c52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9dee559820>]}
+[0m12:16:34.668296 [info ] [MainThread]: 
+[0m12:16:34.670504 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:16:34.672779 [info ] [MainThread]: 
+[0m12:16:34.675990 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m12:16:34.686127 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airbyte_analytics'
+[0m12:16:34.768229 [debug] [ThreadPool]: Using postgres connection "list_airbyte_analytics"
+[0m12:16:34.770397 [debug] [ThreadPool]: On list_airbyte_analytics: BEGIN
+[0m12:16:34.772618 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:16:34.787891 [debug] [ThreadPool]: SQL status: BEGIN in 0.015 seconds
+[0m12:16:34.790430 [debug] [ThreadPool]: Using postgres connection "list_airbyte_analytics"
+[0m12:16:34.792524 [debug] [ThreadPool]: On list_airbyte_analytics: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "list_airbyte_analytics"} */
+select
+      'airbyte' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'airbyte' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'airbyte' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m12:16:34.798894 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.004 seconds
+[0m12:16:34.803109 [debug] [ThreadPool]: On list_airbyte_analytics: ROLLBACK
+[0m12:16:34.805645 [debug] [ThreadPool]: On list_airbyte_analytics: Close
+[0m12:16:34.818104 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:34.819878 [debug] [MainThread]: On master: BEGIN
+[0m12:16:34.822162 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:16:34.837591 [debug] [MainThread]: SQL status: BEGIN in 0.016 seconds
+[0m12:16:34.840454 [debug] [MainThread]: Using postgres connection "master"
+[0m12:16:34.843274 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m12:16:34.850137 [debug] [MainThread]: SQL status: SELECT 0 in 0.004 seconds
+[0m12:16:34.854274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '153b6a62-a226-46ba-9e0f-d18337d68c52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9df00cc500>]}
+[0m12:16:34.856727 [debug] [MainThread]: On master: ROLLBACK
+[0m12:16:34.859755 [debug] [MainThread]: On master: Close
+[0m12:16:34.869883 [debug] [Thread-1 (]: Began running node model.datalineage360.stg_sales_data
+[0m12:16:34.872366 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airbyte_analytics, now model.datalineage360.stg_sales_data)
+[0m12:16:34.874315 [debug] [Thread-1 (]: Began compiling node model.datalineage360.stg_sales_data
+[0m12:16:34.919180 [debug] [Thread-1 (]: Writing injected SQL for node "model.datalineage360.stg_sales_data"
+[0m12:16:34.934581 [debug] [Thread-1 (]: Began executing node model.datalineage360.stg_sales_data
+[0m12:16:34.937724 [debug] [Thread-1 (]: Finished running node model.datalineage360.stg_sales_data
+[0m12:16:34.941457 [debug] [Thread-3 (]: Began running node model.datalineage360.fct_sales
+[0m12:16:34.944526 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.datalineage360.fct_sales'
+[0m12:16:34.946685 [debug] [Thread-3 (]: Began compiling node model.datalineage360.fct_sales
+[0m12:16:34.961204 [debug] [Thread-3 (]: Writing injected SQL for node "model.datalineage360.fct_sales"
+[0m12:16:34.976795 [debug] [Thread-3 (]: Began executing node model.datalineage360.fct_sales
+[0m12:16:34.980197 [debug] [Thread-3 (]: Finished running node model.datalineage360.fct_sales
+[0m12:16:34.983652 [debug] [Thread-2 (]: Began running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m12:16:34.984836 [debug] [Thread-1 (]: Began running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m12:16:34.985860 [debug] [Thread-4 (]: Began running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m12:16:34.986768 [debug] [Thread-3 (]: Began running node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m12:16:34.988202 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b'
+[0m12:16:34.990537 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.datalineage360.stg_sales_data, now test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed)
+[0m12:16:34.993391 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3'
+[0m12:16:34.996150 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.datalineage360.fct_sales, now test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2)
+[0m12:16:34.998636 [debug] [Thread-2 (]: Began compiling node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m12:16:35.001514 [debug] [Thread-1 (]: Began compiling node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m12:16:35.004877 [debug] [Thread-4 (]: Began compiling node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m12:16:35.008077 [debug] [Thread-3 (]: Began compiling node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m12:16:35.101281 [debug] [Thread-2 (]: Writing injected SQL for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b"
+[0m12:16:35.106755 [debug] [Thread-1 (]: Writing injected SQL for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed"
+[0m12:16:35.120191 [debug] [Thread-4 (]: Writing injected SQL for node "test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3"
+[0m12:16:35.154638 [debug] [Thread-3 (]: Writing injected SQL for node "test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2"
+[0m12:16:35.164529 [debug] [Thread-2 (]: Began executing node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m12:16:35.166243 [debug] [Thread-1 (]: Began executing node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m12:16:35.170420 [debug] [Thread-2 (]: Finished running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b
+[0m12:16:35.172185 [debug] [Thread-4 (]: Began executing node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m12:16:35.173381 [debug] [Thread-3 (]: Began executing node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m12:16:35.176938 [debug] [Thread-1 (]: Finished running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed
+[0m12:16:35.180426 [debug] [Thread-2 (]: Began running node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m12:16:35.183988 [debug] [Thread-4 (]: Finished running node test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3
+[0m12:16:35.186814 [debug] [Thread-3 (]: Finished running node test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2
+[0m12:16:35.189064 [debug] [Thread-1 (]: Began running node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m12:16:35.191187 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_net_sales_amount__0.0c0484187b, now test.datalineage360.not_null_fct_sales_invoice_date.40170d736f)
+[0m12:16:35.193433 [debug] [Thread-4 (]: Began running node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m12:16:35.195831 [debug] [Thread-3 (]: Began running node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m12:16:35.198106 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_price_per_unit__0_01.c7d4b5f3ed, now test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288)
+[0m12:16:35.200625 [debug] [Thread-2 (]: Began compiling node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m12:16:35.202818 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_expectations_expect_column_values_to_be_between_fct_sales_quantity_sold__1.51605c54f3, now test.datalineage360.not_null_fct_sales_price_per_unit.b550542012)
+[0m12:16:35.205070 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.datalineage360.dbt_utils_unique_combination_of_columns_fct_sales_invoice_number__product_code.779dae9ab2, now test.datalineage360.not_null_fct_sales_product_code.34cf14c85f)
+[0m12:16:35.207196 [debug] [Thread-1 (]: Began compiling node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m12:16:35.230469 [debug] [Thread-2 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_invoice_date.40170d736f"
+[0m12:16:35.231422 [debug] [Thread-4 (]: Began compiling node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m12:16:35.233640 [debug] [Thread-3 (]: Began compiling node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m12:16:35.246768 [debug] [Thread-1 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288"
+[0m12:16:35.263109 [debug] [Thread-4 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_price_per_unit.b550542012"
+[0m12:16:35.270893 [debug] [Thread-2 (]: Began executing node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m12:16:35.276279 [debug] [Thread-3 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_product_code.34cf14c85f"
+[0m12:16:35.282642 [debug] [Thread-2 (]: Finished running node test.datalineage360.not_null_fct_sales_invoice_date.40170d736f
+[0m12:16:35.287037 [debug] [Thread-2 (]: Began running node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m12:16:35.289893 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.datalineage360.not_null_fct_sales_invoice_date.40170d736f, now test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7)
+[0m12:16:35.293512 [debug] [Thread-2 (]: Began compiling node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m12:16:35.295824 [debug] [Thread-4 (]: Began executing node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m12:16:35.297175 [debug] [Thread-1 (]: Began executing node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m12:16:35.298528 [debug] [Thread-3 (]: Began executing node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m12:16:35.309125 [debug] [Thread-2 (]: Writing injected SQL for node "test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7"
+[0m12:16:35.311500 [debug] [Thread-4 (]: Finished running node test.datalineage360.not_null_fct_sales_price_per_unit.b550542012
+[0m12:16:35.314458 [debug] [Thread-1 (]: Finished running node test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288
+[0m12:16:35.317465 [debug] [Thread-3 (]: Finished running node test.datalineage360.not_null_fct_sales_product_code.34cf14c85f
+[0m12:16:35.331463 [debug] [Thread-2 (]: Began executing node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m12:16:35.335738 [debug] [Thread-2 (]: Finished running node test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7
+[0m12:16:35.340427 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:16:35.342639 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_invoice_number.70b3c89288' was properly closed.
+[0m12:16:35.344677 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_product_code.34cf14c85f' was properly closed.
+[0m12:16:35.346665 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_quantity_sold.31d09234e7' was properly closed.
+[0m12:16:35.348546 [debug] [MainThread]: Connection 'test.datalineage360.not_null_fct_sales_price_per_unit.b550542012' was properly closed.
+[0m12:16:35.355174 [debug] [MainThread]: Command end result
+[0m12:16:35.673876 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/target/manifest.json
+[0m12:16:35.689433 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/target/semantic_manifest.json
+[0m12:16:35.721066 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/target/run_results.json
+[0m12:16:35.747482 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m12:16:35.749433 [info ] [MainThread]: Building catalog
+[0m12:16:35.769931 [debug] [ThreadPool]: Acquiring new postgres connection 'airbyte.information_schema'
+[0m12:16:35.788134 [debug] [ThreadPool]: Using postgres connection "airbyte.information_schema"
+[0m12:16:35.790626 [debug] [ThreadPool]: On airbyte.information_schema: BEGIN
+[0m12:16:35.792572 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:16:35.805737 [debug] [ThreadPool]: SQL status: BEGIN in 0.013 seconds
+[0m12:16:35.807409 [debug] [ThreadPool]: Using postgres connection "airbyte.information_schema"
+[0m12:16:35.808959 [debug] [ThreadPool]: On airbyte.information_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "datalineage360", "target_name": "dev", "connection_name": "airbyte.information_schema"} */
+
+    
+    
+
+    select
+        'airbyte' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('analytics') and
+           upper(tbl.relname) = upper('fct_sales')) or (upper(sch.nspname) = upper('analytics') and
+           upper(tbl.relname) = upper('stg_sales_data')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('sales_data')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m12:16:35.815086 [debug] [ThreadPool]: SQL status: SELECT 38 in 0.005 seconds
+[0m12:16:35.828764 [debug] [ThreadPool]: On airbyte.information_schema: ROLLBACK
+[0m12:16:35.831038 [debug] [ThreadPool]: On airbyte.information_schema: Close
+[0m12:16:35.864094 [debug] [MainThread]: Wrote artifact CatalogArtifact to /usr/app/target/catalog.json
+[0m12:16:35.991615 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/target/manifest.json
+[0m12:16:36.003049 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/target/semantic_manifest.json
+[0m12:16:36.004934 [info ] [MainThread]: Catalog written to /usr/app/target/catalog.json
+[0m12:16:36.008743 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 8.5556755, "process_in_blocks": "0", "process_kernel_time": 0.701559, "process_mem_max_rss": "109804", "process_out_blocks": "0", "process_user_time": 4.929623}
+[0m12:16:36.012401 [debug] [MainThread]: Command `dbt docs generate` succeeded at 12:16:36.011922 after 8.56 seconds
+[0m12:16:36.014935 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m12:16:36.017076 [debug] [MainThread]: Connection 'airbyte.information_schema' was properly closed.
+[0m12:16:36.019140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9df0c340e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9df04b2e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ded88ff20>]}
+[0m12:16:36.021400 [debug] [MainThread]: Flushing usage events
+[0m12:16:38.336868 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:27:56.820631 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3b464fa2d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3b4639b710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3b464f8cb0>]}
+
+
+============================== 12:27:56.830401 | ab69f4c6-f981-4d37-9710-b20e19833c33 ==============================
+[0m12:27:56.830401 [info ] [MainThread]: Running with dbt=1.9.0
+[0m12:27:56.833398 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/app/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:27:57.324127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ab69f4c6-f981-4d37-9710-b20e19833c33', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3b4625dc40>]}
+[0m12:27:57.488763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ab69f4c6-f981-4d37-9710-b20e19833c33', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3b46bf39b0>]}
+[0m12:27:57.492356 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m12:27:57.730059 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0

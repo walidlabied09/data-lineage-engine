@@ -1,0 +1,199 @@
+
+
+services:
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:latest
+    container_name: dbt
+    working_dir: /usr/app
+    volumes:
+      - ./dbt:/usr/app
+    environment:
+      - DBT_PROFILES_DIR=/usr/app
+    ports:
+      - "8080:8080"
+    networks:
+      - airbyte_default
+
+    entrypoint:
+      - /bin/sh
+      - -lc
+      - |
+        set -e
+
+        # Installer curl pour vérifier le serveur
+        if command -v apk >/dev/null 2>&1; then
+          apk add --no-cache curl > /dev/null
+        elif command -v apt-get >/dev/null 2>&1; then
+          apt-get update -qq && apt-get install -y -qq curl > /dev/null
+        fi
+
+        cd /usr/app
+        echo "🧱 Initialisation dbt..."
+        dbt deps
+        dbt run
+        dbt test
+
+        echo "📘 Génération initiale des docs..."
+        dbt docs generate
+
+        echo "🚀 Lancement du serveur dbt docs sur 0.0.0.0:8080"
+        (dbt docs serve --host 0.0.0.0 --port 8080 --no-browser > /usr/app/dbt_docs.log 2>&1 &)
+        DOCS_PID=$!
+
+        # Attendre que le serveur réponde
+        for i in $(seq 1 30); do
+          if curl -fsS http://localhost:8080/ >/dev/null 2>&1; then
+            echo "✅ dbt docs est en ligne (pid=$DOCS_PID)"
+            break
+          fi
+          sleep 1
+        done
+
+        # Si dbt docs ne démarre pas, lancer un fallback
+        if ! curl -fsS http://localhost:8080/ >/dev/null 2>&1; then
+          echo "❗ dbt docs ne répond pas, fallback serveur Python..."
+          kill "$DOCS_PID" >/dev/null 2>&1 || true
+          (cd target && python3 -m http.server 8080 > /usr/app/dbt_docs.log 2>&1 &)
+        fi
+
+        echo "♻️ Mise à jour automatique des docs toutes les 10 minutes..."
+        while true; do
+          sleep 600  # 10 minutes
+          echo "🕒 Rafraîchissement dbt docs..."
+          dbt run
+          dbt test
+          dbt docs generate
+        done &
+
+        echo "📄 Suivi des logs (Ctrl+C pour arrêter)..."
+        tail -f /usr/app/dbt_docs.log
+  great_expectations:
+    build:
+      context: .
+      dockerfile: docker/great_expectations.Dockerfile
+    container_name: gx
+    environment:
+      GE_ROOT_DIR: /usr/src/app/gx
+    volumes:
+      - ./gx:/usr/src/app/gx
+    ports:
+      - "8090:8000"           
+    networks:
+      - default
+      - airbyte_default
+    command: >
+      bash -lc "
+        cd /usr/src/app &&
+        python gx/gx_pipeline.py &&
+        cd gx/validation_docs &&
+        python -m http.server 8000 --bind 0.0.0.0
+      "
+  dagster:
+    build:
+      context: .
+      dockerfile: docker/dagster.Dockerfile
+    container_name: dagster
+    working_dir: /opt/dagster
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - ./dagster:/opt/dagster
+      - ./dagster_home:/opt/dagster_home
+      - ./dbt:/usr/app
+      - ./gx:/usr/app/gx
+
+    environment:
+      DAGSTER_HOME: /opt/dagster_home
+
+      # ---------- AIRBYTE (abctl local) ----------
+      AIRBYTE_URL: "http://host.docker.internal:8000/api/public/v1"
+
+      AIRBYTE_USERNAME: "walid.labied@uir.ac.ma"
+      AIRBYTE_PASSWORD: "W8HpP74kAPKDl5v5PU1ufCrckTcfLQ2O"
+
+      # ⚠️ À vérifier dans l'UI Airbyte (voir étape 3)
+      AIRBYTE_CONNECTION_ID: "76375e55-5b58-4ac2-951a-d4bdfb45b99a"
+
+      DBT_PROFILES_DIR: /usr/app
+      GX_HOME: /usr/app/gx
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    command: >
+      dagster dev -h 0.0.0.0 -p 3000
+
+    depends_on:
+      - great_expectations
+      - dbt
+
+    networks:
+      - default
+      - airbyte_default
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.11.1
+    container_name: mlflow-server
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:///mlflow.db
+      --artifacts-destination /mlflow/artifacts
+      --serve-artifacts
+      --host 0.0.0.0
+      --port 5000
+    ports:
+      - "5000:5000"
+    volumes:
+      - mlflow_metadata:/mlflow             # contient mlflow.db
+      - mlflow_artifacts:/mlflow/artifacts  # artefacts loggués dans l’UI
+    networks:
+      - mlflow-net
+
+  ml_training:
+    build:
+      context: .
+      dockerfile: docker/ml_training.Dockerfile
+    container_name: ml_training
+    depends_on:
+      - mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    volumes:
+      - ./ml:/app/ml                         # code source local
+    networks:
+      - mlflow-net
+      - airbyte_default
+    command: ["python", "ml/train_all_models.py"]
+
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    ports:
+      - "3001:3000"   # 👈 Nouveau port accessible dans ton navigateur
+    environment:
+      MB_DB_FILE: /metabase.db
+    volumes:
+      - ./metabase_data:/metabase.db
+    networks:
+      - airbyte_default
+      - default
+    depends_on:
+      - dbt
+volumes:
+  mlflow_metadata:
+  mlflow_artifacts:
+networks:
+  airbyte_default:
+    external: true
+  mlflow-net:
+
+
+
+
+
+
+
+
+

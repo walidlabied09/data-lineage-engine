@@ -1,0 +1,56 @@
+2025-11-19 23:16:25 +0000 - dagster - DEBUG - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - 870 - LOGS_CAPTURED - Started capturing logs in process (pid: 870).
+2025-11-19 23:16:25 +0000 - dagster - DEBUG - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - 870 - dbt_run_op - STEP_START - Started execution of step "dbt_run_op".
+2025-11-19 23:16:25 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - ▶️ Running dbt run + test...
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:27  Running with dbt=1.10.15
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:27  Registered adapter: postgres=1.9.1
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:28  Unable to do partial parsing because of a version mismatch
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:32  [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - functionality
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - Found top-level arguments to test
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - `dbt_expectations.expect_column_values_to_be_between`. Arguments to generic
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - tests should be nested under the `arguments` property.`
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:33  Found 2 models, 9 data tests, 1 source, 841 macros
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:33
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:33  Concurrency: 4 threads (target='dev')
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:33
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:33  1 of 2 START sql table model analytics.stg_sales_data .......................... [RUN]
+2025-11-19 23:16:48 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:39  1 of 2 OK created sql table model analytics.stg_sales_data ..................... [[32mSELECT 520748[0m in 6.16s]
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:39  2 of 2 START sql table model analytics.fct_sales ............................... [RUN]
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:41  2 of 2 OK created sql table model analytics.fct_sales .......................... [[32mSELECT 519584[0m in 1.96s]
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:41
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:41  Finished running 2 table models in 0 hours 0 minutes and 8.39 seconds (8.39s).
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:41
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:41  [32mCompleted successfully[0m
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:41
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:41  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:41  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - Summary of encountered deprecations:
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - - MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - To see all deprecation instances instead of just the first occurrence of each,
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - run command again with the `--show-all-deprecations` flag. You may also need to
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - run with `--no-partial-parse` as some deprecations are only encountered during
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - parsing.
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:45  Running with dbt=1.10.15
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:45  Registered adapter: postgres=1.9.1
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - [0m23:16:46  Encountered an error:
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - Compilation Error
+2025-11-19 23:16:49 +0000 - dagster - INFO - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - dbt found 3 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+2025-11-19 23:16:50 +0000 - dagster - ERROR - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - dbt_run_op - dbt exited with code 2
+2025-11-19 23:16:50 +0000 - dagster - ERROR - data_quality_job - e80242b9-f7a6-4a82-a565-047c0a25c1c2 - 870 - dbt_run_op - STEP_FAILURE - Execution of step "dbt_run_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "dbt_run_op"::
+
+Exception: ❌ dbt failed (see logs above)
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/ops/dbt_op.py", line 37, in dbt_run_op
+    raise Exception("❌ dbt failed (see logs above)")
+

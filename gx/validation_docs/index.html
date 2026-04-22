@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Quality Dashboard - Great Expectations</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b2535;
+      color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 20px 40px;
+      background: #102a43;
+      border-bottom: 1px solid #173d57;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    header span {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+    main {
+      padding: 30px 40px 50px 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #102a43;
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      border: 1px solid #173d57;
+    }
+    .card h2 {
+      margin: 0 0 4px 0;
+      font-size: 18px;
+    }
+    .card p {
+      margin: 4px 0;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+    .badge.stg {
+      background: rgba(46, 196, 182, 0.15);
+      color: #2ec4b6;
+    }
+    .badge.fct {
+      background: rgba(255, 159, 67, 0.15);
+      color: #ff9f43;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      background: #2f80ed;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #2563c3;
+    }
+    footer {
+      padding: 12px 40px 20px 40px;
+      font-size: 11px;
+      opacity: 0.7;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Data Quality Dashboard</h1>
+      <span>Great Expectations • Airbyte ➜ dbt ➜ Postgres</span>
+    </div>
+  </header>
+  <main>
+    <p>Choisissez un rapport de validation :</p>
+    <div class="grid">
+      <div class="card">
+        <span class="badge stg">Staging</span>
+        <h2>analytics.stg_sales_data</h2>
+        <p>Données nettoyées en entrée de la fact table. Contrôle des nulls, quantités et prix.</p>
+        <a class="btn" href="stg_sales_data_validation.html">🔍 Ouvrir le rapport</a>
+      </div>
+      <div class="card">
+        <span class="badge fct">Fact table</span>
+        <h2>analytics.fct_sales</h2>
+        <p>Table de faits ventes (montants, marges, remises). Contrôles métier sur les montants.</p>
+        <a class="btn" href="fct_sales_validation.html">🔍 Ouvrir le rapport</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    Généré automatiquement par Great Expectations dans le conteneur <code>gx</code>.
+  </footer>
+</body>
+</html>

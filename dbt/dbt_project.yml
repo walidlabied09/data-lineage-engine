@@ -1,0 +1,13 @@
+name: datalineage360
+version: 1.0.0
+config-version: 2
+
+profile: datalineage360
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  datalineage360:
+    +materialized: table

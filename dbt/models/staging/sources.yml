@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw_airbyte
+    database: airbyte
+    schema: public     # ✅ schéma correct
+    loader: airbyte
+
+    tables:
+      - name: sales_data
+        description: Données de ventes brutes (Online Retail).

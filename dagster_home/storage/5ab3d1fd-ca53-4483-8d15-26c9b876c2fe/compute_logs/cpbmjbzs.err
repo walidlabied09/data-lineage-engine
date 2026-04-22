@@ -1,0 +1,20 @@
+2025-11-19 16:45:39 +0000 - dagster - DEBUG - data_quality_job - 5ab3d1fd-ca53-4483-8d15-26c9b876c2fe - 868 - LOGS_CAPTURED - Started capturing logs in process (pid: 868).
+2025-11-19 16:45:39 +0000 - dagster - DEBUG - data_quality_job - 5ab3d1fd-ca53-4483-8d15-26c9b876c2fe - 868 - dbt_run_op - STEP_START - Started execution of step "dbt_run_op".
+2025-11-19 16:45:39 +0000 - dagster - ERROR - data_quality_job - 5ab3d1fd-ca53-4483-8d15-26c9b876c2fe - 868 - dbt_run_op - STEP_FAILURE - Execution of step "dbt_run_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "dbt_run_op"::
+
+Exception: ❌ dbt failed
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/ops/dbt_op.py", line 20, in dbt_run_op
+    raise Exception("❌ dbt failed")
+

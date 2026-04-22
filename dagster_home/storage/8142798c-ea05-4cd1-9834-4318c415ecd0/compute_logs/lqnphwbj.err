@@ -1,0 +1,74 @@
+2025-11-18 03:12:26 +0000 - dagster - DEBUG - data_quality_job - 8142798c-ea05-4cd1-9834-4318c415ecd0 - 974 - LOGS_CAPTURED - Started capturing logs in process (pid: 974).
+2025-11-18 03:12:26 +0000 - dagster - DEBUG - data_quality_job - 8142798c-ea05-4cd1-9834-4318c415ecd0 - 974 - airbyte_sync_op - STEP_START - Started execution of step "airbyte_sync_op".
+2025-11-18 03:12:26 +0000 - dagster - INFO - data_quality_job - 8142798c-ea05-4cd1-9834-4318c415ecd0 - airbyte_sync_op - 🚀 Lancement du sync Airbyte pour TON_ID_CONNECTION
+2025-11-18 03:12:27 +0000 - dagster - ERROR - data_quality_job - 8142798c-ea05-4cd1-9834-4318c415ecd0 - 974 - airbyte_sync_op - STEP_FAILURE - Execution of step "airbyte_sync_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "airbyte_sync_op"::
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='host.docker.internal', port=8000): Max retries exceeded with url: /api/v1/connections/sync (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fdb03270a00>: Failed to resolve 'host.docker.internal' ([Errno -2] Name or service not known)"))
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/ops/airbyte_op.py", line 13, in airbyte_sync_op
+    trigger = requests.post(
+  File "/usr/local/lib/python3.10/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+
+The above exception occurred during handling of the following exception:
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='host.docker.internal', port=8000): Max retries exceeded with url: /api/v1/connections/sync (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fdb03270a00>: Failed to resolve 'host.docker.internal' ([Errno -2] Name or service not known)"))
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+
+The above exception was caused by the following exception:
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPConnection object at 0x7fdb03270a00>: Failed to resolve 'host.docker.internal' ([Errno -2] Name or service not known)
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+
+The above exception was caused by the following exception:
+socket.gaierror: [Errno -2] Name or service not known
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+

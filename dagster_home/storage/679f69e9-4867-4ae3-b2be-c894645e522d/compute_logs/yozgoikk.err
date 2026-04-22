@@ -1,0 +1,21 @@
+2025-11-18 04:10:51 +0000 - dagster - DEBUG - data_quality_job - 679f69e9-4867-4ae3-b2be-c894645e522d - 959 - LOGS_CAPTURED - Started capturing logs in process (pid: 959).
+2025-11-18 04:10:51 +0000 - dagster - DEBUG - data_quality_job - 679f69e9-4867-4ae3-b2be-c894645e522d - 959 - airbyte_sync_op - STEP_START - Started execution of step "airbyte_sync_op".
+2025-11-18 04:10:51 +0000 - dagster - INFO - data_quality_job - 679f69e9-4867-4ae3-b2be-c894645e522d - airbyte_sync_op - 🚀 Lancement sync Airbyte pour fd98ed1e-31db-459a-9f1b-a07160a20360
+2025-11-18 04:10:51 +0000 - dagster - ERROR - data_quality_job - 679f69e9-4867-4ae3-b2be-c894645e522d - 959 - airbyte_sync_op - STEP_FAILURE - Execution of step "airbyte_sync_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "airbyte_sync_op"::
+
+Exception: ❌ Erreur API Airbyte (sync): {"message":"Internal Server Error: Could not find configuration for STANDARD_SYNC: fd98ed1e-31db-459a-9f1b-a07160a20360.","exceptionClassName":"io.airbyte.commons.server.errors.IdNotFoundKnownException","exceptionStack":[],"rootCauseExceptionStack":[]}
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/ops/airbyte_op.py", line 33, in airbyte_sync_op
+    raise Exception(f"❌ Erreur API Airbyte (sync): {trigger.text}")
+

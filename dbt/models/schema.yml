@@ -1,0 +1,81 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: >
+      Table de faits des ventes issue de stg_sales_data, avec colonnes renommées
+      et indicateurs calculés (net, remises, marge estimée).
+
+    columns:
+      - name: invoice_number
+        description: "Identifiant de facture (renommé)."
+        tests:
+          - not_null
+
+      - name: product_code
+        description: "Code produit (renommé)."
+        tests:
+          - not_null
+
+      - name: customer_identifier
+        description: >
+          Identifiant client. Peut être NULL pour les ventes anonymes (ex : client
+          non enregistré ou transaction comptoir).
+        # on retire le test not_null car ~25% des ventes sont sans client
+        tests: []
+
+      - name: customer_country
+        description: "Pays du client (normalisé en majuscules)."
+
+      - name: invoice_timestamp
+        description: "Horodatage complet de la vente (UTC)."
+
+      - name: invoice_date
+        description: "Date de la vente (YYYY-MM-DD)."
+        tests:
+          - not_null
+
+      - name: invoice_year
+        description: "Année de la vente (ex : 2011)."
+
+      - name: invoice_month
+        description: "Mois de la vente (1–12)."
+
+      - name: invoice_day
+        description: "Jour du mois (1–31)."
+
+      - name: quantity_sold
+        description: "Quantité vendue."
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+
+      - name: price_per_unit
+        description: "Prix unitaire."
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0.01
+
+      - name: gross_amount
+        description: "Montant brut (quantity_sold * price_per_unit)."
+
+      - name: discount_amount
+        description: "Montant de remise appliquée (ex : 10% pour le Royaume-Uni)."
+
+      - name: net_sales_amount
+        description: "Montant net après remise."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+
+      - name: gross_margin
+        description: "Marge brute estimée (≈ 30% du prix unitaire)."
+
+      - name: line_total
+        description: "Montant de ligne issu du modèle de staging."
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [invoice_number, product_code]
