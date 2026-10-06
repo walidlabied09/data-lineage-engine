@@ -1,0 +1,21 @@
+# Environnements et caches Python
+env/
+venv/
+__pycache__/
+*.pyc
+
+# Données locales et bases temporaires
+metabase_data/
+mlflow_db/
+dagster_home/storage/
+*.db
+*.sqlite
+
+# Artefacts générés dbt & Great Expectations
+dbt/target/
+dbt/dbt_packages/
+gx/uncommitted/
+gx/data_docs/
+
+# Variables d'environnement
+.env
