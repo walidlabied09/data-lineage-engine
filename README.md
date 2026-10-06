@@ -1,85 +1,143 @@
-# 🔄 Pipeline ETL & Machine Learning Orchestré (Modern Data Stack)
+# 🔄 Pipeline ETL & Machine Learning Orchestré — Modern Data Stack
 
-Plateforme automatisée de bout en bout conçue pour collecter, transformer, valider et exploiter des données transactionnelles (données de ventes), allant de l'ingestion brute jusqu'à la modélisation prédictive (séries temporelles) et à la restitution décisionnelle.
+Plateforme automatisée de bout en bout conçue pour collecter, transformer, valider et exploiter des données transactionnelles de ventes, depuis l'ingestion des données brutes jusqu'à la modélisation prédictive et à la restitution décisionnelle.
 
 ---
 
 ## 🏗️ Architecture Globale du Pipeline
 
-Le pipeline est entièrement orchestré par **Dagster** et s'articule autour d'une base **PostgreSQL** :
+Le pipeline est entièrement orchestré par **Dagster** et s'articule autour d'une base **PostgreSQL**.
 
 ```text
- ┌──────────────┐
- │ Dataset CSV  │ (Données de ventes)
- └──────┬───────┘
-        │
-        ▼
- ┌──────────────┐
- │   Airbyte    │ ─── Écrit les données brutes
- └──────┬───────┘
-        │
-        ▼
- ┌──────────────┐
- │  PostgreSQL  │ ◄─── Stockage central (Raw & Transformed)
- └──┬─────────┬─┘
-    │         │
-    │ Lit les │ Écrit les données
-    │ brutes  │ transformées
-    ▼         │
- ┌──────────────┐
- │     dbt      │ ─── Modélisation : raw ➔ stg_sales_data ➔ fct_sales
- └──────┬───────┘
-        │
-        ▼
- ┌──────────────────────┐
- │  Great Expectations  │ ─── Quality Gates (stg_sales_data_suite & fct_sales_suite)
- └──────┬───────────────┘
-        │ Données validées à 100%
-        ├─────────────────────────────┐
-        ▼                             ▼
- ┌──────────────┐              ┌──────────────┐
- │    MLflow    │              │   Metabase   │
- │ Modélisation │              │ Visualisation│
- │ Time Series  │              │ Dashboard BI │
- └──────────────┘              └──────────────┘
-        ▲                             ▲
-        └──────────────┬──────────────┘
-                       │ Orchestration de bout en bout
-                ┌──────┴──────┐
-                │   Dagster   │
-                └─────────────┘
+                         ┌──────────────┐
+                         │ Dataset CSV  │
+                         │ Données      │
+                         │ de ventes    │
+                         └──────┬───────┘
+                                │
+                                ▼
+                         ┌──────────────┐
+                         │   Airbyte    │
+                         │  Ingestion   │
+                         └──────┬───────┘
+                                │
+                                ▼
+                    ┌────────────────────────┐
+                    │      PostgreSQL        │
+                    │   Stockage central     │
+                    │    Raw & Transformed   │
+                    └───────────┬────────────┘
+                                │
+                                ▼
+                         ┌──────────────┐
+                         │     dbt      │
+                         │ Transformation│
+                         └──────┬───────┘
+                                │
+                                ▼
+                  ┌──────────────────────────┐
+                  │  Great Expectations      │
+                  │     Quality Gates        │
+                  └────────────┬─────────────┘
+                               │
+                    ┌──────────┴──────────┐
+                    ▼                     ▼
+             ┌──────────────┐      ┌──────────────┐
+             │    MLflow    │      │   Metabase   │
+             │  Machine     │      │  Dashboard   │
+             │  Learning    │      │      BI      │
+             └──────────────┘      └──────────────┘
+
+                         ▲
+                         │
+                  ┌──────┴──────┐
+                  │   Dagster   │
+                  │Orchestration│
+                  └─────────────┘
 ```
 
 ---
 
 ## 🛠️ Stack Technique & Rôles
 
-* **Orchestration — [Dagster](https://dagster.io/) :** Automatise l'ordonnancement des tâches dans l'ordre requis, supervise les runs d'exécution et assure la traçabilité complète des assets.
+### 🔄 Orchestration — Dagster
 
-* **Extraction & Ingestion — [Airbyte](https://airbyte.com/) :** Connecteur automatisé assurant le chargement périodique du fichier CSV source vers l'entrepôt PostgreSQL.
+* Automatisation et ordonnancement des tâches.
+* Supervision des runs d'exécution.
+* Gestion des assets et dépendances.
+* Traçabilité du pipeline de bout en bout.
 
-* **Stockage — [PostgreSQL](https://www.postgresql.org/) :** Base de données relationnelle hébergeant les tables brutes et les tables modélisées.
+### 📥 Extraction & Ingestion — Airbyte
 
-* **Transformation & Lignage — [dbt](https://www.getdbt.com/) :**
+* Chargement automatisé du fichier CSV source.
+* Ingestion vers PostgreSQL.
+* Gestion des flux de données.
 
-  * Nettoyage, standardisation des typologies et structuration modulaire.
-  * Lignage de transformation : `raw_airbyte_sales_data` ➔ `stg_sales_data` ➔ `fct_sales`.
+### 🗄️ Stockage — PostgreSQL
 
-* **Validation Qualité — [Great Expectations](https://greatexpectations.io/) :**
+Base de données relationnelle centrale contenant les données brutes et transformées.
 
-  * Suites `stg_sales_data_suite` et `fct_sales_suite`.
-  * Contrôle des contraintes d'intégrité : valeurs non nulles, types, montants ≥ 0, quantités et dates cohérentes.
-  * Déclenchement automatique post-dbt via Dagster.
-  * Taux de réussite : **100 %**.
+### 🔧 Transformation — dbt
 
-* **Machine Learning & MLOps — [MLflow](https://mlflow.org/) :**
+* Nettoyage et standardisation des données.
+* Transformation SQL modulaire.
+* Construction des modèles analytiques.
+* Lignage :
 
-  * Entraînement et suivi de modèles prédictifs temporels (`TimeSeries_Models_Training`).
-  * Suivi des paramètres, artefacts et métriques d'évaluation : RMSE, MAE.
+```text
+raw_airbyte_sales_data
+          │
+          ▼
+   stg_sales_data
+          │
+          ▼
+      fct_sales
+```
 
-* **Restitution Analytique — [Metabase](https://www.metabase.com/) :** Tableaux de bord interactifs de pilotage des ventes 2011 : suivi du chiffre d'affaires, panier moyen, volumes vendus et répartition géographique.
+### ✅ Validation Qualité — Great Expectations
 
-* **Conteneurisation — [Docker & Docker Compose](https://www.docker.com/) :** Déploiement reproductible de l'ensemble de l'écosystème.
+Suites de validation utilisées :
+
+* `stg_sales_data_suite`
+* `fct_sales_suite`
+
+Contrôles réalisés notamment sur :
+
+* Valeurs non nulles.
+* Types de données.
+* Montants supérieurs ou égaux à zéro.
+* Quantités.
+* Dates.
+* Contraintes d'intégrité.
+
+Les contrôles qualité sont déclenchés automatiquement après les transformations dbt via Dagster.
+
+### 🤖 Machine Learning & MLOps — MLflow
+
+* Entraînement de modèles prédictifs sur séries temporelles.
+* Suivi des expérimentations.
+* Suivi des paramètres.
+* Suivi des métriques.
+* Gestion des artefacts et modèles.
+
+Métriques utilisées :
+
+* RMSE
+* MAE
+
+### 📊 Business Intelligence — Metabase
+
+Tableaux de bord interactifs permettant d'analyser les ventes :
+
+* Chiffre d'affaires.
+* Panier moyen.
+* Volumes vendus.
+* Répartition géographique.
+* Évolution mensuelle des ventes.
+
+### 🐳 Conteneurisation — Docker
+
+L'ensemble de l'écosystème est déployé avec **Docker et Docker Compose** afin de garantir un environnement reproductible et facilement déployable.
 
 ---
 
@@ -89,19 +147,20 @@ Le pipeline est entièrement orchestré par **Dagster** et s'articule autour d'u
 data-lineage-engine/
 │
 ├── airbyte/             # Configurations et exports des connexions Airbyte
-├── dagster/             # Définition des jobs, ops, assets et schedules Dagster
-├── dagster_home/        # Stockage local et configuration du daemon Dagster
-├── dbt/                 # Projet dbt (modèles staging et mart fct_sales)
-├── docker/              # Fichiers Dockerfile et scripts utilitaires
-├── docs/                # Présentation technique et documentation du projet
-├── gx/                  # Checkpoints, expectations suites et configurations Great Expectations
-├── metabase_data/       # Persistance des configurations Metabase
-├── ml/                  # Scripts de modélisation de séries temporelles
-├── mlflow_db/           # Base SQLite de métadonnées pour MLflow
-├── docker-compose.yml   # Fichier d'orchestration multi-conteneurs
-├── run_dbt.ps1          # Script d'exécution rapide dbt
-├── .gitignore           # Exclusion des fichiers générés et données lourdes
-└── README.md
+├── dagster/             # Jobs, ops, assets et schedules Dagster
+├── dagster_home/        # Configuration et stockage local Dagster
+├── dbt/                 # Projet dbt et modèles SQL
+├── docker/              # Dockerfiles et scripts utilitaires
+├── docs/                # Documentation technique
+├── gx/                  # Great Expectations
+├── metabase_data/       # Données persistantes Metabase
+├── ml/                  # Scripts Machine Learning
+├── mlflow_db/           # Base de métadonnées MLflow
+│
+├── docker-compose.yml   # Orchestration des conteneurs
+├── run_dbt.ps1          # Script d'exécution dbt
+├── .gitignore           # Fichiers exclus du dépôt
+└── README.md            # Documentation du projet
 ```
 
 ---
@@ -110,13 +169,12 @@ data-lineage-engine/
 
 ### 1. Prérequis
 
-Avant de commencer, assurez-vous d'avoir installé :
+Avant de commencer, installez :
 
-* Docker Desktop avec Docker Compose
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+* Docker Compose
 * Python 3.9+
 * Git
-
----
 
 ### 2. Cloner le projet
 
@@ -125,17 +183,15 @@ git clone https://github.com/walidlabied09/data-lineage-engine.git
 cd data-lineage-engine
 ```
 
----
+### 3. Démarrer l'infrastructure
 
-### 3. Démarrer l'infrastructure complète
-
-L'ensemble des services est conteneurisé avec Docker Compose :
+L'ensemble des services est conteneurisé avec Docker Compose.
 
 ```bash
 docker-compose up -d
 ```
 
-Pour vérifier que les conteneurs sont bien démarrés :
+### 4. Vérifier les conteneurs
 
 ```bash
 docker-compose ps
@@ -145,47 +201,40 @@ docker-compose ps
 
 ## 🌐 Ports & Interfaces Web
 
-| Service          | Rôle                                   | URL locale              |
-| ---------------- | -------------------------------------- | ----------------------- |
-| **Dagster UI**   | Orchestration & supervision des runs   | `http://localhost:3000` |
-| **Airbyte**      | Gestion des flux d'ingestion           | `http://localhost:8000` |
-| **Metabase**     | Tableaux de bord des ventes            | `http://localhost:3001` |
-| **MLflow UI**    | Expérimentations de séries temporelles | `http://localhost:5001` |
-| **GX Data Docs** | Rapports de qualité des données        | `http://localhost:8090` |
+| Service          | Rôle                         | URL locale              |
+| ---------------- | ---------------------------- | ----------------------- |
+| **Dagster UI**   | Orchestration et supervision | `http://localhost:3000` |
+| **Airbyte**      | Gestion de l'ingestion       | `http://localhost:8000` |
+| **Metabase**     | Dashboards BI                | `http://localhost:3001` |
+| **MLflow UI**    | Suivi Machine Learning       | `http://localhost:5001` |
+| **GX Data Docs** | Rapports de qualité          | `http://localhost:8090` |
 
 ---
 
 ## 🔄 Exécution Manuelle des Composants
 
-### Transformations SQL — dbt
-
-Depuis le dossier `dbt/` :
+### Transformation avec dbt
 
 ```bash
 cd dbt
+
 dbt run
 dbt test
 ```
 
----
-
-### Validation des Données — Great Expectations
-
-Depuis le dossier `gx/` :
+### Validation avec Great Expectations
 
 ```bash
 cd gx
+
 great_expectations checkpoint run sales_checkpoint
 ```
 
----
-
-### Entraînement Machine Learning — MLflow
-
-Depuis le dossier `ml/` :
+### Entraînement Machine Learning
 
 ```bash
 cd ml
+
 python train_timeseries.py
 ```
 
@@ -193,140 +242,130 @@ python train_timeseries.py
 
 ## 🔗 Flux de Données
 
-Le traitement des données suit le flux suivant :
-
 ```text
-Dataset CSV
-     │
-     ▼
-  Airbyte
-     │
-     ▼
- PostgreSQL
-     │
-     ▼
-    dbt
-     │
-     ▼
-stg_sales_data
-     │
-     ▼
-Great Expectations
-     │
-     ▼
-  fct_sales
-     │
-     ├──────────────────────┐
-     ▼                      ▼
-  MLflow                Metabase
-     │                      │
-     ▼                      ▼
-Prévisions              Dashboard
-temporelles             décisionnel
+                    Dataset CSV
+                         │
+                         ▼
+                      Airbyte
+                         │
+                         ▼
+                    PostgreSQL
+                         │
+                         ▼
+                        dbt
+                         │
+                         ▼
+                  stg_sales_data
+                         │
+                         ▼
+             Great Expectations
+                         │
+                         ▼
+                     fct_sales
+                    ┌────┴────┐
+                    ▼         ▼
+                 MLflow    Metabase
+                    │         │
+                    ▼         ▼
+              Prévisions  Dashboard
+              temporelles  décisionnel
 ```
 
 ---
 
 ## 📊 Qualité des Données
 
-Great Expectations intervient comme **Quality Gate** dans le pipeline.
+**Great Expectations** intervient comme **Quality Gate** dans le pipeline.
 
 Les contrôles portent notamment sur :
 
-* Les valeurs non nulles
-* Les types de données
-* Les montants
-* Les quantités
-* Les dates
-* Les contraintes d'intégrité
+* Valeurs non nulles.
+* Types de données.
+* Montants.
+* Quantités.
+* Dates.
+* Contraintes d'intégrité.
 
-Les suites de validation utilisées sont :
+### Suites de validation
 
 ```text
 stg_sales_data_suite
 fct_sales_suite
 ```
 
-Le pipeline est configuré pour déclencher automatiquement les contrôles de qualité après les transformations dbt.
+Le pipeline déclenche automatiquement les contrôles de qualité après les transformations dbt.
 
 ---
 
 ## 🤖 Machine Learning & MLOps
 
-Le projet intègre **MLflow** pour le suivi des expérimentations de Machine Learning.
+Le projet intègre **MLflow** pour le suivi des expérimentations de Machine Learning sur des séries temporelles.
 
-Le module de modélisation permet d'effectuer des entraînements sur des **séries temporelles**.
-
-Nom du processus d'entraînement :
+Expérience principale :
 
 ```text
 TimeSeries_Models_Training
 ```
 
-Les éléments suivis avec MLflow comprennent notamment :
+Les éléments suivis avec MLflow comprennent :
 
-* Paramètres des modèles
-* Métriques d'évaluation
-* Artefacts
-* Résultats des expérimentations
+* Paramètres des modèles.
+* Métriques d'évaluation.
+* Artefacts.
+* Modèles.
+* Runs d'entraînement.
 
-Les principales métriques utilisées sont :
+### Métriques
 
-```text
-RMSE
-MAE
-```
+* **RMSE** — Root Mean Squared Error
+* **MAE** — Mean Absolute Error
 
 ---
 
 ## 📈 Business Intelligence
 
-**Metabase** est utilisé pour la restitution et la visualisation des données de ventes.
+**Metabase** est utilisé pour la restitution et la visualisation des données de ventes 2011.
 
-Les tableaux de bord permettent notamment de suivre :
+Les principaux indicateurs comprennent :
 
 * 💰 Chiffre d'affaires
 * 🛒 Panier moyen
 * 📦 Volumes vendus
 * 🌍 Répartition géographique
-* 📅 Évolution des ventes
-
-Les données analysées concernent notamment les ventes de **2011**.
+* 📅 Évolution mensuelle des ventes
 
 ---
 
 ## 🐳 Conteneurisation
 
-L'ensemble de l'écosystème est conteneurisé avec **Docker** et **Docker Compose**.
-
-Cette approche permet :
-
-* Un environnement reproductible
-* Un déploiement simplifié
-* Une isolation des services
-* Une gestion centralisée de l'infrastructure
-* Un démarrage simultané des différents composants
-
-Le fichier principal d'orchestration est :
+L'ensemble de l'écosystème est conteneurisé via :
 
 ```text
 docker-compose.yml
 ```
 
+### Avantages
+
+* Environnement isolé.
+* Déploiement reproductible.
+* Déploiement multi-services simplifié.
+* Gestion centralisée des réseaux.
+* Gestion des volumes persistants.
+
 ---
 
 ## 🎯 Objectifs du Projet
 
-Les principaux objectifs de cette plateforme sont :
+Ce projet a pour objectifs de :
 
-* Automatiser l'ingestion des données
-* Centraliser les données dans PostgreSQL
-* Transformer les données avec dbt
-* Garantir leur qualité avec Great Expectations
-* Orchestrer l'ensemble du pipeline avec Dagster
-* Entraîner des modèles prédictifs avec MLflow
-* Restituer les indicateurs dans Metabase
-* Mettre en place une architecture Data moderne et reproductible
+* Automatiser l'ingestion des données transactionnelles.
+* Centraliser les données dans PostgreSQL.
+* Transformer les données avec dbt.
+* Garantir la qualité des données avec Great Expectations.
+* Orchestrer l'ensemble du pipeline avec Dagster.
+* Entraîner des modèles prédictifs avec MLflow.
+* Restituer les indicateurs décisionnels avec Metabase.
+* Mettre en place une architecture moderne de traitement de données.
 
 ---
 
@@ -343,39 +382,42 @@ Projet réalisé dans le cadre du cycle d'ingénieur **Big Data Engineering** à
 
 ### Encadrant pédagogique
 
-* **M. Youssef Gahi**
+**M. Youssef Gahi**
 
 ---
 
-## 📌 Résumé de l'Architecture
+## 🧩 Architecture Finale
 
 ```text
 ┌──────────────────────────────────────────────────────────────┐
-│                     MODERN DATA STACK                        │
+│                    MODERN DATA STACK                         │
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
-│  CSV                                                         │
-│   │                                                          │
-│   ▼                                                          │
-│ Airbyte ───────► PostgreSQL                                  │
-│                      │                                       │
-│                      ▼                                       │
-│                     dbt                                      │
-│                      │                                       │
-│                      ▼                                       │
-│             Great Expectations                               │
-│                      │                                       │
-│              ┌───────┴────────┐                              │
-│              ▼                ▼                              │
-│           MLflow          Metabase                            │
-│              │                │                              │
-│              ▼                ▼                              │
-│       Machine Learning    Dashboard BI                       │
+│                         CSV                                  │
+│                          │                                   │
+│                          ▼                                   │
+│                       Airbyte                                │
+│                          │                                   │
+│                          ▼                                   │
+│                     PostgreSQL                               │
+│                          │                                   │
+│                          ▼                                   │
+│                         dbt                                  │
+│                          │                                   │
+│                          ▼                                   │
+│                 Great Expectations                            │
+│                          │                                   │
+│                   ┌──────┴──────┐                            │
+│                   ▼             ▼                            │
+│                MLflow       Metabase                         │
+│                   │             │                            │
+│                   ▼             ▼                            │
+│             Machine Learning  Dashboard BI                   │
 │                                                              │
-│                 ↑                                            │
-│                 │                                            │
-│              Dagster                                         │
-│        Orchestration globale                                 │
+│                          ▲                                   │
+│                          │                                   │
+│                       Dagster                                │
+│                 Orchestration globale                        │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
 ```
@@ -384,6 +426,6 @@ Projet réalisé dans le cadre du cycle d'ingénieur **Big Data Engineering** à
 
 ## 📜 Licence
 
-Ce projet a été réalisé dans un cadre académique dans le cadre du cycle d'ingénieur **Big Data Engineering** à l'**Université Internationale de Rabat (UIR)**.
+Ce projet a été réalisé dans un cadre académique à l'**Université Internationale de Rabat (UIR)**.
 
-Toute utilisation, modification ou redistribution du projet doit respecter les conditions définies par ses auteurs.
+Toute utilisation, modification ou redistribution doit respecter les conditions définies par les auteurs.
